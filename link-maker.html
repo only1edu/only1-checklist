@@ -65,7 +65,7 @@
         alert("사용자 ID를 입력해주세요!");
         return;
       }
-      const baseUrl = "https://your-netlify-link.netlify.app"; // ← 여기 너의 체크리스트 페이지 주소로 바꿔야 해!
+      const baseUrl = "https://only1-checklist.netlify.app"; // 
       const link = `${baseUrl}?room=${encodeURIComponent(room)}`;
       document.getElementById("result").innerHTML = 
         `<strong>생성된 링크:</strong><br><a href="${link}" target="_blank">${link}</a>`;
