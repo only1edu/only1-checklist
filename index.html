@@ -261,10 +261,14 @@
         <th>학습자 메모</th>
       </tr>
     </thead>
+
+    <style>
+    tr.last-row td {border-bottom: solid black;}
+</style>
     <tbody>
       
         <tr>
-            <td class="center middle" rowspan="2" font-weight: bold;"><b>오늘의 학습</b></td>
+            <td class="center middle" rowspan="2"><b>오늘의 학습</b></td>
             <td class="middle"><b>①</b>. [맞춤학습] 오늘의 학습 시간표 중 1개 과목 학습을 완료하세요.</td>
             <td class="center middle">15</td>
             <td class="middle">강의마다 다르지만, 대체로 15분 내외 소요됩니다.</td>
@@ -272,7 +276,7 @@
             <td class="middle"><textarea id="memo0" placeholder="메모를 입력하세요..."></textarea></td>
         </tr>
     
-        <tr>
+         <tr class="last-row">
             
             <td class="middle"><b>②</b>. [이달의 화상수업] 화상수업 샘플 영상을 시청하세요.</td>
             <td class="center middle">10</td>
@@ -282,7 +286,7 @@
         </tr>
     
         <tr>
-            <td class="center middle" rowspan="10" style="background-color: #F2F2F2; font-weight: bold;">메타인지 학습</td>
+            <td class="center middle" rowspan="10" style="font-weight: bold;">메타인지 학습</td>
             <td class="middle" style="background-color: #F2F2F2;"><b>①</b>. [마음챙김-신체활동] '키클댄스, 키클발레, 키클요가, 엄마랑 함께 요가' 각 메뉴를 살펴보세요.</td>
             <td class="center middle" style="background-color: #F2F2F2;">3</td>
             <td class="middle" style="background-color: #F2F2F2;">&nbsp;</td>
@@ -292,20 +296,20 @@
     
         <tr>
             
-            <td class="middle" style="background-color: #F2F2F2;"><b>②</b>. [마음챙김-심리검사] 정서행동검사를 완료하세요.</td>
-            <td class="center middle" style="background-color: #F2F2F2;">10</td>
-            <td class="middle" style="background-color: #F2F2F2;">[심리검사 결과보기] 클릭 시 검사 결과를 다시 확인할 수 있습니다.</td>
-            <td class="center middle" style="background-color: #F2F2F2;"><input type="checkbox" id="cb3"></td>
-            <td class="middle" style="background-color: #F2F2F2;"><textarea id="memo3" placeholder="메모를 입력하세요..."></textarea></td>
+            <td class="middle"><b>②</b>. [마음챙김-심리검사] 정서행동검사를 완료하세요.</td>
+            <td class="center middle">10</td>
+            <td class="middle">[심리검사 결과보기] 클릭 시 검사 결과를 다시 확인할 수 있습니다.</td>
+            <td class="center middle"><input type="checkbox" id="cb3"></td>
+            <td class="middle"><textarea id="memo3" placeholder="메모를 입력하세요..."></textarea></td>
         </tr>
     
         <tr>
             
-            <td class="middle" style="background-color: #F2F2F2;"><b>③</b>. [마음챙김-마음표현훈련] '정서조절훈련-감정을 잘 알고싶을 때'를 완료하세요.</td>
-            <td class="center middle" style="background-color: #F2F2F2;">6</td>
-            <td class="middle" style="background-color: #F2F2F2;">&nbsp;</td>
-            <td class="center middle" style="background-color: #F2F2F2;"><input type="checkbox" id="cb4"></td>
-            <td class="middle" style="background-color: #F2F2F2;"><textarea id="memo4" placeholder="메모를 입력하세요..."></textarea></td>
+            <td class="middle"><b>③</b>. [마음챙김-마음표현훈련] '정서조절훈련-감정을 잘 알고싶을 때'를 완료하세요.</td>
+            <td class="center middle">6</td>
+            <td class="middle>&nbsp;</td>
+            <td class="center middle"><input type="checkbox" id="cb4"></td>
+            <td class="middle"><textarea id="memo4" placeholder="메모를 입력하세요..."></textarea></td>
         </tr>
     
         <tr>
@@ -368,7 +372,7 @@
             <td class="middle"><textarea id="memo10" placeholder="메모를 입력하세요..."></textarea></td>
         </tr>
     
-        <tr>
+        <tr class="last-row">
             
             <td class="middle"><b>⑩</b>. [메타플러스] '메타세상'에서 회원들이 직접 작성한 메타노트를 살펴보세요. (과목별)</td>
             <td class="center middle">3</td>
