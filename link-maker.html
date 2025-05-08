@@ -52,9 +52,14 @@
   </style>
 </head>
 <body>
-  <h2>온리원 체크리스트 링크 생성기</h2>
-  <label for="room">사용자 ID 또는 이름 (영문/숫자 추천):</label>
-  <input type="text" id="room" placeholder="예: parent01" />
+  <h2>온리원 콘텐츠 학습 체크리스트 링크 생성기</h2>
+  <label for="type">체크리스트 유형 선택:</label>
+<select id="type">
+  <option value="checklist">초등</option>
+  <option value="kids">키즈</option>
+</select>
+  <label for="room">사용자 ID (년+월+알파벳):</label>
+  <input type="text" id="room" placeholder="예: 2505a, 2505b..." />
   <button onclick="generateLink()">링크 생성하기</button>
   <div id="result"></div>
 
@@ -65,7 +70,7 @@
         alert("사용자 ID를 입력해주세요!");
         return;
       }
-      const baseUrl = "https://only1-checklist.netlify.app"; // ← 여기 너의 체크리스트 페이지 주소로 바꿔야 해!
+      const baseUrl = "https://only1-checklist2.netlify.app"; 
       const link = `${baseUrl}?room=${encodeURIComponent(room)}`;
       document.getElementById("result").innerHTML = 
         `<strong>생성된 링크:</strong><br><a href="${link}" target="_blank">${link}</a>`;
