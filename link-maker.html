@@ -81,7 +81,8 @@
         return;
       }
       const baseUrl = "https://only1-checklist2.netlify.app"; 
-      const fullPath = `${baseUrl}${type === 'checklist' ? '' : `/${type}`}?room=${encodeURIComponent(room)}`;
+      const fullPath = `${baseUrl}${type === 'checklist' ? '' : `/${type}`}?room=${encodeURIComponent(room)}&type=${type}`;
+
 
 
   document.getElementById("result").innerHTML = 
