@@ -57,6 +57,9 @@
   </style>
 </head>
 <body>
+  <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 24px;">
+  <img src="온리원BI.png" alt="온리원 로고" style="height: 60px;" />
+</div>
   <h2>온리원 콘텐츠 학습 체크리스트 링크 생성기</h2>
   <label for="type">체크리스트 유형 선택:</label>
 <select id="type">
@@ -77,7 +80,8 @@
         return;
       }
       const baseUrl = "https://only1-checklist2.netlify.app"; 
-      const fullPath = `${baseUrl}/${type}?room=${encodeURIComponent(room)}`;
+      const fullPath = `${baseUrl}${type === 'checklist' ? '' : `/${type}`}?room=${encodeURIComponent(room)}`;
+
 
   document.getElementById("result").innerHTML = 
     `<strong>생성된 링크:</strong><br><a href="${fullPath}" target="_blank">${fullPath}</a>`;
