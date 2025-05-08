@@ -66,15 +66,18 @@
   <script>
     function generateLink() {
       const room = document.getElementById("room").value.trim();
+      const type = document.getElementById("type").value;
       if (!room) {
         alert("사용자 ID를 입력해주세요!");
         return;
       }
       const baseUrl = "https://only1-checklist2.netlify.app"; 
-      const link = `${baseUrl}?room=${encodeURIComponent(room)}`;
-      document.getElementById("result").innerHTML = 
-        `<strong>생성된 링크:</strong><br><a href="${link}" target="_blank">${link}</a>`;
-    }
+      const fullPath = `${baseUrl}/${type}?room=${encodeURIComponent(room)}`;
+
+  document.getElementById("result").innerHTML = 
+    `<strong>생성된 링크:</strong><br><a href="${fullPath}" target="_blank">${fullPath}</a>`;
+}
+    
   </script>
 </body>
 </html>
