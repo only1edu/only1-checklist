@@ -686,7 +686,7 @@
     const params = new URLSearchParams(window.location.search);
 const roomId = params.get("room") || "default";
     const type = params.get("type") || "kids";
-const docRef = db.collection("checklist").doc(roomId);
+const docRef = db.collection("checklist-" + type).doc(roomId);
 
     async function saveToFirebase() {
       const data = {};
