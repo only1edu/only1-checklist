@@ -270,63 +270,62 @@
 </table>
 <button class="save-button" onclick="saveToFirebase()">저장</button>
 <script>
-    const firebaseConfig = {
-      apiKey: "AIzaSyBHGPiEKQqpTBBiePdSw63uOxxl38_tHds",
-      authDomain: "only1vs.firebaseapp.com",
-      projectId: "only1vs",
-      storageBucket: "only1vs.firebasestorage.app",
-      messagingSenderId: "420271780307",
-      appId: "1:420271780307:web:e2ac42ae77e8f277c5ff26",
-      measurementId: "G-B3N7C0XSMS"
-    };
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore();
-    const params = new URLSearchParams(window.location.search);
+const firebaseConfig = {
+  apiKey: "AIzaSyBHGPiEKQqpTBBiePdSw63uOxxl38_tHds",
+  authDomain: "only1vs.firebaseapp.com",
+  projectId: "only1vs",
+  storageBucket: "only1vs.firebasestorage.app",
+  messagingSenderId: "420271780307",
+  appId: "1:420271780307:web:e2ac42ae77e8f277c5ff26",
+  measurementId: "G-B3N7C0XSMS"
+};
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+const params = new URLSearchParams(window.location.search);
 const roomId = params.get("room") || "default";
 const docRef = db.collection("checklist").doc(roomId);
 
-    async function saveToFirebase() {
-      const data = {};
-      const total = 60;
-      for (let i = 0; i < total; i++) {
-        data["cb" + i] = document.getElementById("cb" + i).checked;
-        data["memo" + i] = document.getElementById("memo" + i).value;
-      }
-      await docRef.set(data);
-      alert("저장이 완료되었습니다.");
-    }
+async function saveToFirebase() {
+  const data = {};
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  checkboxes.forEach((cb, i) => {
+    data["cb" + i] = cb.checked;
+    data["memo" + i] = document.getElementById("memo" + i).value;
+  });
+  await docRef.set(data);
+  alert("저장이 완료되었습니다.");
+}
 
-    async function loadFromFirebase() {
-      const doc = await docRef.get();
-      if (doc.exists) {
-        const data = doc.data();
-        const total = 60;
-        for (let i = 0; i < total; i++) {
-          document.getElementById("cb" + i).checked = data["cb" + i] || false;
-          document.getElementById("memo" + i).value = data["memo" + i] || "";
-        }
-      }
-    }
-
-    window.onload = loadFromFirebase;
-  </script>
+async function loadFromFirebase() {
+  const doc = await docRef.get();
+  if (doc.exists) {
+    const data = doc.data();
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach((cb, i) => {
+      cb.checked = data["cb" + i] || false;
+      document.getElementById("memo" + i).value = data["memo" + i] || "";
+    });
+  }
+}
+window.onload = loadFromFirebase;
+</script>
 <script>
 function autoSaveToFirebase() {
   const data = {};
-  const total = 60;
-  for (let i = 0; i < total; i++) {
-    data["cb" + i] = document.getElementById("cb" + i).checked;
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  checkboxes.forEach((cb, i) => {
+    data["cb" + i] = cb.checked;
     data["memo" + i] = document.getElementById("memo" + i).value;
-  }
+  });
   docRef.set(data);
 }
 document.addEventListener("DOMContentLoaded", function () {
-  for (let i = 0; i < 60; i++) {
-    const cb = document.getElementById("cb" + i);
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  checkboxes.forEach((cb, i) => {
     const memo = document.getElementById("memo" + i);
     if (cb) cb.addEventListener("change", autoSaveToFirebase);
     if (memo) memo.addEventListener("input", autoSaveToFirebase);
-  }
+  });
 });
 </script>
 <script>
