@@ -671,67 +671,93 @@
         <td class="middle"><textarea id="memo64" placeholder="메모를 입력하세요..."></textarea></td></tr></tbody>
 </table>
 <button class="save-button" onclick="saveToFirebase()">저장</button>
-<script>
-    const firebaseConfig = {
-      apiKey: "AIzaSyBHGPiEKQqpTBBiePdSw63uOxxl38_tHds",
-      authDomain: "only1vs.firebaseapp.com",
-      projectId: "only1vs",
-      storageBucket: "only1vs.firebasestorage.app",
-      messagingSenderId: "420271780307",
-      appId: "1:420271780307:web:e2ac42ae77e8f277c5ff26",
-      measurementId: "G-B3N7C0XSMS"
-    };
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore();
-    const params = new URLSearchParams(window.location.search);
-const roomId = params.get("room") || "default";
-    const type = params.get("type") || "kids";
-const docRef = db.collection("checklist-" + type).doc(roomId);
 
-    async function saveToFirebase() {
-      const data = {};
-      const total = 60;
+    <script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyBHGPiEKQqpTBBiePdSw63uOxxl38_tHds",
+    authDomain: "only1vs.firebaseapp.com",
+    projectId: "only1vs",
+    storageBucket: "only1vs.firebasestorage.app",
+    messagingSenderId: "420271780307",
+    appId: "1:420271780307:web:e2ac42ae77e8f277c5ff26",
+    measurementId: "G-B3N7C0XSMS"
+  };
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+  const params = new URLSearchParams(window.location.search);
+  const roomId = params.get("room") || "default";
+  const type = params.get("type") || "checklist";
+  const docRef = db.collection("checklist-" + type).doc(roomId);
+
+  async function saveToFirebase() {
+    const data = {};
+    const checkboxes = document.querySelectorAll("input[type='checkbox']");
+    const total = checkboxes.length;
+    let checked = 0;
+
+    checkboxes.forEach((cb, i) => {
+      if (cb.checked) checked++;
+      data["cb" + i] = cb.checked;
+      data["memo" + i] = document.getElementById("memo" + i).value;
+    });
+
+    const percent = total > 0 ? Math.round((checked / total) * 100) : 0;
+    data["progressPercent"] = percent;
+
+    await docRef.set(data);
+    alert("저장이 완료되었습니다.");
+  }
+
+  async function loadFromFirebase() {
+    const doc = await docRef.get();
+    if (doc.exists) {
+      const data = doc.data();
+      const total = document.querySelectorAll("input[type='checkbox']").length;
       for (let i = 0; i < total; i++) {
-        data["cb" + i] = document.getElementById("cb" + i).checked;
-        data["memo" + i] = document.getElementById("memo" + i).value;
+        document.getElementById("cb" + i).checked = data["cb" + i] || false;
+        document.getElementById("memo" + i).value = data["memo" + i] || "";
       }
-      await docRef.set(data);
-      alert("저장이 완료되었습니다.");
-    }
 
-    async function loadFromFirebase() {
-      const doc = await docRef.get();
-      if (doc.exists) {
-        const data = doc.data();
-        const total = 60;
-        for (let i = 0; i < total; i++) {
-          document.getElementById("cb" + i).checked = data["cb" + i] || false;
-          document.getElementById("memo" + i).value = data["memo" + i] || "";
-        }
-      }
+      const percent = data["progressPercent"] || 0;
+      document.getElementById("progress-bar").style.width = percent + "%";
+      document.getElementById("progress-text").innerText = "진행률: " + percent + "%";
     }
+  }
 
-    window.onload = loadFromFirebase;
-  </script>
-<script>
-function autoSaveToFirebase() {
-  const data = {};
-  const total = 60;
-  for (let i = 0; i < total; i++) {
-    data["cb" + i] = document.getElementById("cb" + i).checked;
-    data["memo" + i] = document.getElementById("memo" + i).value;
-  }
-  docRef.set(data);
-}
-document.addEventListener("DOMContentLoaded", function () {
-  for (let i = 0; i < 60; i++) {
-    const cb = document.getElementById("cb" + i);
-    const memo = document.getElementById("memo" + i);
-    if (cb) cb.addEventListener("change", autoSaveToFirebase);
-    if (memo) memo.addEventListener("input", autoSaveToFirebase);
-  }
-});
+  window.onload = loadFromFirebase;
 </script>
+
+<script>
+  function autoSaveToFirebase() {
+    const data = {};
+    const checkboxes = document.querySelectorAll("input[type='checkbox']");
+    const total = checkboxes.length;
+    let checked = 0;
+
+    checkboxes.forEach((cb, i) => {
+      if (cb.checked) checked++;
+      data["cb" + i] = cb.checked;
+      data["memo" + i] = document.getElementById("memo" + i).value;
+    });
+
+    const percent = total > 0 ? Math.round((checked / total) * 100) : 0;
+    data["progressPercent"] = percent;
+
+    docRef.set(data);
+    updateProgress();
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const total = document.querySelectorAll("input[type='checkbox']").length;
+    for (let i = 0; i < total; i++) {
+      const cb = document.getElementById("cb" + i);
+      const memo = document.getElementById("memo" + i);
+      if (cb) cb.addEventListener("change", autoSaveToFirebase);
+      if (memo) memo.addEventListener("input", autoSaveToFirebase);
+    }
+  });
+</script>
+
 <script>
   function updateProgress() {
     const total = document.querySelectorAll('input[type="checkbox"]').length;
@@ -740,6 +766,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("progress-bar").style.width = percent + "%";
     document.getElementById("progress-text").innerText = "진행률: " + percent + "%";
   }
+
   document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
       cb.addEventListener("change", updateProgress);
@@ -747,5 +774,6 @@ document.addEventListener("DOMContentLoaded", function () {
     updateProgress();
   });
 </script>
+
 </body>
 </html>
