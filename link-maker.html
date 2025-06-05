@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <title>온리원 체크리스트 링크 생성기</title>
-  <style>
+<meta charset="utf-8"/>
+<title>온리원 체크리스트 링크 생성기</title>
+<style>
     body {
       font-family: Arial, sans-serif;
       max-width: 600px;
@@ -57,22 +58,21 @@
   </style>
 </head>
 <body>
-  <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 24px;">
-  <img src="온리원BI.png" alt="온리원 로고" style="height: 60px;" />
+<div style="display: flex; justify-content: center; align-items: center; margin-bottom: 24px;">
+<img alt="온리원 로고" src="온리원BI.png" style="height: 60px;"/>
 </div>
-  <h2>온리원 콘텐츠 학습 체크리스트 링크 생성기</h2>
-  <label for="type">체크리스트 유형 선택:</label>
+<h2>온리원 콘텐츠 학습 체크리스트 링크 생성기</h2>
+<label for="type">체크리스트 유형 선택:</label>
 <select id="type">
-  <option value="checklist">초등</option>
-  <option value="kids">키즈</option>
-   <option value="mid">중등</option>
+<option value="checklist">초등</option>
+<option value="kids">키즈</option>
+<option value="mid">중등</option>
 </select>
-  <label for="room">사용자 ID (년+월+알파벳):</label>
-  <input type="text" id="room" placeholder="예: 2505a, 2505b..." />
-  <button onclick="generateLink()">링크 생성하기</button>
-  <div id="result"></div>
-
-  <script>
+<label for="room">사용자 ID (년+월+알파벳):</label>
+<input id="room" placeholder="예: 2505a, 2505b..." type="text"/>
+<button onclick="generateLink()">링크 생성하기</button>
+<div id="result"></div>
+<script>
     function generateLink() {
       const room = document.getElementById("room").value.trim();
       const type = document.getElementById("type").value;
@@ -80,7 +80,7 @@
         alert("사용자 ID를 입력해주세요!");
         return;
       }
-      const baseUrl = "https://only1-checklist2.netlify.app"; 
+      const baseUrl = "https://edutest11.netlify.app/"; 
       const fullPath = `${baseUrl}${type === 'checklist' ? '' : `/${type}`}?room=${encodeURIComponent(room)}&type=${type}`;
 
 
