@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>온리원 체크리스트</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f8f8f8;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    .header-title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .progress-wrapper {
+      width: 200px;
+      height: 20px;
+      background-color: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      margin-top: 10px;
+    }
+    #progress-bar {
+      background-color: #e60000;
+      height: 100%;
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+    #progress-text {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: bold;
+      color: #222;
+    }
+    table {
+      width: 100%;
+      background: white;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    textarea {
+      width: 100%;
+      height: 60px;
+    }
+    input[type="checkbox"] {
+      transform: scale(1.2);
+    }
+    .save-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #e60000;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <div class="header-title">온리원 학습 체크리스트</div>
+    <div class="progress-wrapper">
+      <div id="progress-bar"></div>
+      <div id="progress-text">진행률: 0%</div>
+    </div>
+  </div>
+</div>
+
+<table>
+  <thead>
+    <tr><th>과제</th><th>완료</th><th>메모</th></tr>
+  </thead>
+  <tbody id="checklist-body">
+    <!-- JS로 생성 -->
+  </tbody>
+</table>
+
+<button class="save-button" onclick="saveToLocal()">저장</button>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const roomId = params.get("room") || "default";
+  const itemCount = 5;
+
+  function generateChecklist() {
+    const tbody = document.getElementById("checklist-body");
+    for (let i = 0; i < itemCount; i++) {
+      const row = document.createElement("tr");
+      row.innerHTML = \`
+        <td>과제 \${i + 1}</td>
+        <td style="text-align: center;"><input type="checkbox" id="cb\${i}"></td>
+        <td><textarea id="memo\${i}" placeholder="메모 입력..."></textarea></td>
+      \`;
+      tbody.appendChild(row);
+    }
+  }
+
+  function updateProgress() {
+    const total = document.querySelectorAll('input[type="checkbox"]').length;
+    const checked = document.querySelectorAll('input[type="checkbox"]:checked').length;
+    const percent = total ? Math.round((checked / total) * 100) : 0;
+    document.getElementById("progress-bar").style.width = percent + "%";
+    document.getElementById("progress-text").innerText = "진행률: " + percent + "%";
+  }
+
+  function bindEvents() {
+    for (let i = 0; i < itemCount; i++) {
+      const cb = document.getElementById("cb" + i);
+      const memo = document.getElementById("memo" + i);
+      cb.addEventListener("change", () => {
+        updateProgress();
+        saveToLocal();
+      });
+      memo.addEventListener("input", saveToLocal);
+    }
+  }
+
+  function saveToLocal() {
+    const data = {};
+    for (let i = 0; i < itemCount; i++) {
+      data["cb" + i] = document.getElementById("cb" + i).checked;
+      data["memo" + i] = document.getElementById("memo" + i).value;
+    }
+    localStorage.setItem("checklist-" + roomId, JSON.stringify(data));
+  }
+
+  function loadFromLocal() {
+    const saved = localStorage.getItem("checklist-" + roomId);
+    if (!saved) return;
+    const data = JSON.parse(saved);
+    for (let i = 0; i < itemCount; i++) {
+      document.getElementById("cb" + i).checked = data["cb" + i] || false;
+      document.getElementById("memo" + i).value = data["memo" + i] || "";
+    }
+    updateProgress();
+  }
+
+  window.onload = function () {
+    generateChecklist();
+    loadFromLocal();
+    bindEvents();
+  };
+</script>
+
+</body>
+</html>
