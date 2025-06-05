@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>온리원 링크 관리자 페이지</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background-color: #f5f5f5;
+    }
+    h1 {
+      color: #e60000;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: center;
+    }
+    th {
+      background-color: #eee;
+    }
+    a {
+      color: #007acc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>온리원 체크리스트 - 생성된 링크 목록</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>사용자 ID (room)</th>
+        <th>유형 (type)</th>
+        <th>링크</th>
+      </tr>
+    </thead>
+    <tbody id="link-table-body">
+    </tbody>
+  </table>
+
+  <script>
+    const savedLinks = JSON.parse(localStorage.getItem("linkList") || "[]");
+    const tbody = document.getElementById("link-table-body");
+
+    if (savedLinks.length === 0) {
+      tbody.innerHTML = "<tr><td colspan='3'>저장된 링크가 없습니다.</td></tr>";
+    } else {
+      savedLinks.forEach(item => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = \`
+          <td>\${item.room}</td>
+          <td>\${item.type}</td>
+          <td><a href="\${item.url}" target="_blank">바로가기</a></td>
+        \`;
+        tbody.appendChild(tr);
+      });
+    }
+  </script>
+</body>
+</html>
