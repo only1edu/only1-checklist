@@ -1,0 +1,622 @@
+
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>온리원 중등 콘텐츠 학습 체크리스트</title>
+<style>
+    :root {
+        --main-red: #e60000;
+        --soft-gray: #f5f5f5;
+        --text-dark: #333;
+    }
+
+    body {
+        font-family: 'Noto Sans KR', sans-serif;
+        background: #fdfdfd;
+        padding: 24px;
+        color: var(--text-dark);
+    }
+
+    
+.banner-title {
+  background: transparent;
+  color: #000;
+  padding: 10px 18px;
+  text-align: center;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 24px;
+  box-shadow: none;
+}
+
+
+    table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        table-layout: fixed;
+    }
+
+    th, td {
+        padding: 12px 14px;
+        border-bottom: 1px solid #e0e0e0;
+        vertical-align: middle;
+    }
+
+    th {
+        background-color: var(--main-red);
+        color: white;
+        text-align: center;
+        font-weight: 600;
+    }
+
+    td.center {
+        text-align: center;
+    }
+
+    td.middle {
+        vertical-align: middle;
+    }
+
+    
+
+    textarea {
+        width: 100%;
+        height: 60px;
+        resize: vertical;
+        padding: 8px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-family: 'Noto Sans KR', sans-serif;
+        background-color: #fff;
+        transition: border 0.3s;
+    }
+
+    textarea:focus {
+        border-color: var(--main-red);
+        outline: none;
+    }
+
+    input[type="checkbox"] {
+        transform: scale(1.2);
+        accent-color: var(--main-red);
+    }
+
+    .save-button {
+        margin-top: 24px;
+        padding: 12px 28px;
+        background-color: var(--main-red);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transition: background 0.3s, transform 0.2s;
+    }
+
+    .save-button:hover {
+        background-color: #cc0000;
+        transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+        table, thead, tbody, th, td, tr {
+            display: block;
+            width: 100%;
+        }
+        thead tr {
+            display: none;
+        }
+        tr {
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ccc;
+        }
+        td {
+            position: relative;
+            padding-left: 50%;
+            text-align: left !important;
+        }
+        td::before {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 45%;
+            white-space: nowrap;
+            font-weight: bold;
+            color: #888;
+        }
+        td:nth-of-type(1)::before { content: "메뉴"; }
+        td:nth-of-type(2)::before { content: "학습 리스트"; }
+        td:nth-of-type(3)::before { content: "예상 소요 시간(분)"; }
+        td:nth-of-type(4)::before { content: "참고"; }
+        td:nth-of-type(5)::before { content: "완료 여부"; }
+        td:nth-of-type(6)::before { content: "학습자 메모"; }
+    }
+    
+    
+.banner-title {
+  background: transparent;
+  color: #000;
+  padding: 10px 18px;
+  text-align: center;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 24px;
+  box-shadow: none;
+}
+
+    
+    
+    td, th { line-height: 1.4; padding-top: 6px; padding-bottom: 6px; }
+    body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
+    h2 { text-align: center; }
+    table { width: 100%; border-collapse: collapse; background: #fff; table-layout: fixed; }
+    th, td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        vertical-align: middle;
+        word-wrap: break-word;
+    }
+    th { background-color: #333; color: white; text-align: center; }
+    td.center { text-align: center; }
+    td.middle { vertical-align: middle; }
+    textarea {
+        width: 100%;
+        height: 60px;
+        resize: vertical;
+        box-sizing: border-box;
+    }
+    input[type="checkbox"] { transform: scale(1.2); }
+    .save-button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    .save-button:hover { background-color: #45a049; }
+
+    tr.last-row td {  border-bottom: 2px solid black;}
+    
+    @media (max-width: 768px) {
+        table, thead, tbody, th, td, tr {
+            display: block;
+            width: 100%;
+        }
+        thead tr { display: none; }
+        tr {
+            margin-bottom: 15px;
+            border-bottom: 2px solid #ccc;
+        }
+        td {
+            position: relative;
+            padding-left: 50%;
+            text-align: left !important;
+        }
+        td::before {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 45%;
+            white-space: nowrap;
+            font-weight: bold;
+        }
+        td:nth-of-type(1)::before { content: "메뉴"; }
+        td:nth-of-type(2)::before { content: "학습 리스트"; }
+        td:nth-of-type(3)::before { content: "예상 소요 시간(분)"; }
+        td:nth-of-type(4)::before { content: "참고"; }
+        td:nth-of-type(5)::before { content: "완료 여부"; }
+        td:nth-of-type(6)::before { content: "학습자 메모"; }
+    }
+  </style>
+</head>
+<body>
+<div class="header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+<div style="display: flex; align-items: center; gap: 16px;">
+<a href="https://drive.google.com/file/d/1C_GD4GO-n20u7Z5zZxwFzrdiqqW5v7jB/view?usp=drive_link" style="padding: 6px 12px; background-color: var(--main-red); color: white; text-decoration: none; border-radius: 6px; font-size: 14px;" target="_blank">
+      온리원 중등 로드맵
+    </a>
+<div class="header-title" style="font-size: 20px; font-weight: bold;">온리원 중등 콘텐츠 학습 체크리스트</div>
+<div class="progress-wrapper" style="width: 160px; height: 20px; background-color: #f3f3f3; border-radius: 10px; overflow: hidden; position: relative;">
+<div id="progress-bar" style="background-color: #e60000; height: 100%; width: 0%; transition: width 0.3s ease;"></div>
+<div id="progress-text" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: bold; color: #222;">
+        진행률: 0%
+      </div>
+</div>
+</div>
+<div class="header-logo"><img alt="온리원 로고" src="온리원BI.png" style="height: 50px;"/></div>
+</div>
+<table>
+<colgroup>
+<col style="width: 7%;"/>
+<col style="width: 43%;"/>
+<col style="width: 5%;"/>
+<col style="width: 18%;"/>
+<col style="width: 5%;"/>
+<col style="width: 22%;"/>
+</colgroup>
+<thead>
+<tr>
+<th>메뉴</th>
+<th>학습 리스트</th>
+<th>예상 소요 시간(분)</th>
+<th>참고</th>
+<th>완료 여부</th>
+<th>학습자 메모</th>
+</tr>
+</thead>
+<tbody><tr><td class="center middle" rowspan="1" style="border-bottom: 2px solid black;"><b>필수 시청</b></td>
+<td class="middle" style="border-bottom: 2px solid black;"><b>①. </b><a href="https://www.youtube.com/watch?v=ztLup5tJyB0" target="_blank">[온리원 중등 학습 가이드] 영상을 확인하세요.(클릭) </a></td>
+<td class="center middle" style="border-bottom: 2px solid black;">11</td>
+<td class="middle" style="border-bottom: 2px solid black;">해당 영상을 가장 먼저 시청한 후 콘텐츠 학습을 진행해 주세요.</td>
+<td class="center middle" style="border-bottom: 2px solid black;"><input id="cb0" type="checkbox"/></td>
+<td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo0" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="center middle" rowspan="8" style="border-bottom: 2px solid black;"><b>나의 학습방</b></td>
+<td class="middle"><b>①. </b><a href="https://myurl.ai/zcuwEs" target="_blank">[스마트강의 강좌 설정 방법]을 확인하세요.(클릭)</a></td>
+<td class="center middle">2</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb1" type="checkbox"/></td>
+<td class="middle"><textarea id="memo1" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>②. </b><a href="https://myurl.ai/zcuyya" target="_blank">[스마트강의 수강 방법]을 확인하세요.(클릭)</a></td>
+<td class="center middle">2</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb2" type="checkbox"/></td>
+<td class="middle"><textarea id="memo2" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>③. </b>[AI학습관-스마트매쓰 솔루션] '학습 바로 시작하기'를 눌러 '진단문제'와 '처방문제' 문제풀이를 해보세요.</td>
+<td class="center middle">3</td>
+<td class="middle">문항 응답은 임의로 선택하셔도 됩니다. 채점 후 정답/해설 화면을 확인하세요.</td>
+<td class="center middle"><input id="cb3" type="checkbox"/></td>
+<td class="middle"><textarea id="memo3" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>④. </b>[AI학습관-사과개념 마스터] '사회-사회① 22개정-Ⅰ세계화시대, 지리의힘-1. 세계 여러 지역의 다양한 특성' 학습을 완료하세요.</td>
+<td class="center middle">3</td><td class="middle"></td>
+<td class="center middle"><input id="cb4" type="checkbox"/></td>
+<td class="middle"><textarea id="memo4" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>⑤. </b>[AI학습관-내신VOCA 마스터] 'VOCA STUDY-Lesson1- Unit1' 학습을 완료하세요.</td>
+<td class="center middle">3</td>
+<td class="middle">출판사 설정 화면이 나오는 경우, '1학년-비상교육'으로 설정하세요.</td>
+<td class="center middle"><input id="cb5" type="checkbox"/></td>
+<td class="middle"><textarea id="memo5" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>⑦. </b>[AI학습관-내신VOCA 마스터] 'VOCA REVIEW, VOCA 내단어장' 학습을 살펴보세요.</td>
+<td class="center middle">3</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb6" type="checkbox"/></td>
+<td class="middle"><textarea id="memo6" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>⑦. </b>[강사ZONE] 과목별 강사들의 '학습질답, 공지사항, 자유게시판, 선생님Hi 등' 게시글을 살펴보세요.</td>
+<td class="center middle">2</td>
+<td class="middle">[나의 학습방] 화면 왼쪽 하단 즐겨찾기 메뉴에 '강사존'이 있습니다.</td>
+<td class="center middle"><input id="cb7" type="checkbox"/></td>
+<td class="middle"><textarea id="memo7" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle" style="border-bottom: 2px solid black;"><b>⑧. </b>[강사ZONE] '온리원 ON' 영상들을 살펴보세요.</td>
+<td class="center middle" style="border-bottom: 2px solid black;">2</td>
+<td class="middle" style="border-bottom: 2px solid black;"></td>
+<td class="center middle" style="border-bottom: 2px solid black;"><input id="cb8" type="checkbox"/></td>
+<td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo8" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="center middle" rowspan="8" style="border-bottom: 2px solid black;"><b>메타인지 학습</b></td>
+<td class="middle"><b>①. </b>[메타인지 학습-AI메타보드] 메타인지학습 소개 페이지 영상, 내용을 살펴보세요.</td>
+<td class="center middle">6</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb9" type="checkbox"/></td>
+<td class="middle"><textarea id="memo9" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>②. </b>[메타인지 학습-AI메타보드] 메타보드 이용안내 페이지에서 AI메타보드, AI채움퀘스트를 모두 살펴보세요.</td>
+<td class="center middle">4</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb10" type="checkbox"/></td>
+<td class="middle"><textarea id="memo10" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>③. </b>[메타인지 학습-과목별 미션] 전체미션&gt;내신학습&gt;수학&gt;중1&gt;(22개정)중등수학1-1 내신학습미션_3-4단원을 클릭하여 계획을 세워보세요.</td>
+<td class="center middle">3</td>
+<td class="middle">계획을 세울 때 오늘 요일이 들어가게 해주세요.</td>
+<td class="center middle"><input id="cb11" type="checkbox"/></td>
+<td class="middle"><textarea id="memo11" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>④. </b>[오늘의 학습 확인]온리원 중등 메인&gt;나의학습방&gt;오늘의 학습에서 (22개정)중등수학1-1 내신학습미션_3-4단원 시간표를 확인하고 클릭하여 학습을 살펴보세요.</td>
+<td class="center middle">10</td>
+<td class="middle">핵심강의, 문제, 학습리뷰 단계를 모두 확인해주세요.</td>
+<td class="center middle"><input id="cb12" type="checkbox"/></td>
+<td class="middle"><textarea id="memo12" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>⑤. </b>[메타인지 학습-과목별 미션] 전체미션&gt;시험대비&gt;영어&gt;학년설정 '중1'&gt;중1 9월 전국영어듣기능력평가대비 미션을 클릭하여 계획을 세워보세요.</td>
+<td class="center middle">3</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb13" type="checkbox"/></td>
+<td class="middle"><textarea id="memo13" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>⑥. </b>[오늘의 학습 확인] 온리원 중등 메인&gt;나의학습방&gt;중1 9월 전국영어듣기능력평가 시간표를 확인하고 클릭하여 5번 문제까지 확인해보세요. </td>
+<td class="center middle">5</td>
+<td class="middle">각 문제 옆 '헤드셋 아이콘'을 클릭하여 듣기를 해보세요.</td>
+<td class="center middle"><input id="cb14" type="checkbox"/></td>
+<td class="middle"><textarea id="memo14" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>⑦. </b>[메타인지 학습-과목별 미션] 전체미션&gt;국영전문&gt;국어&gt;레벨 선택 'Lv.2'&gt;[과학/기술]국어 비문학 Lv.2 미션을 클릭하여 계획을 세워보세요.</td>
+<td class="center middle">3</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb15" type="checkbox"/></td>
+<td class="middle"><textarea id="memo15" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle" style="border-bottom: 2px solid black;"><b>⑧. </b>[오늘의 학습 확인]온리원 중등 메인&gt;나의학습방&gt;[과학/기술]국어 비문학 Lv.2 미션 시간표를 확인하고 클릭하여 학습을 살펴보세요.</td>
+<td class="center middle" style="border-bottom: 2px solid black;">5</td>
+<td class="middle" style="border-bottom: 2px solid black;">학습 단계를 모두 확인해주세요.</td>
+<td class="center middle" style="border-bottom: 2px solid black;"><input id="cb16" type="checkbox"/></td>
+<td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo16" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="center middle" rowspan="6" style="border-bottom: 2px solid black;"><b>내신 학습</b></td><td class="middle"><b>①. </b>[내신학습 가이드] 페이지를 모두 확인하세요. </td>
+<td class="center middle">5</td>
+<td class="middle">중등 신입생, 진도강좌, 날개강좌, 단기특강, 학년별 총정리까지 확인해주세요.</td>
+<td class="center middle"><input id="cb17" type="checkbox"/></td>
+<td class="middle"><textarea id="memo17" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>②. </b>[내신진도] 중1&gt;국어&gt;(오른쪽)스마트강의 클릭&gt;출판사 '비상교육(박현숙)'&gt;1학기 전범위&gt;김지연T 체크박스 클릭&gt; '선택한 강좌 수강하기'를 클릭하여 담아보세요.</td>
+<td class="center middle">2</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb18" type="checkbox"/></td>
+<td class="middle"><textarea id="memo18" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>③. </b>[강의 확인] 나의학습방&gt;(오른쪽)수강중인 강좌&gt;나의 강의실을 클릭&gt;[22개정]2025 내신 국어 1-1 전범위:비상(박현) 학습하기 클릭해보세요.</td>
+<td class="center middle">2</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb19" type="checkbox"/></td>
+<td class="middle"><textarea id="memo19" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>④. </b>[강의 수강①] 4강 [학습활동+지문](2) 추론하며 듣기① 학습하기 버튼 클릭 &gt; 개념콕 클릭하고 강의를 확인하세요. </td>
+<td class="center middle">5</td>
+<td class="middle">오른쪽 하단 전구 버튼을 클릭하고 탐구 1:1부터 탐구3까지 클릭해보세요.</td>
+<td class="center middle"><input id="cb20" type="checkbox"/></td><td class="middle"><textarea id="memo20" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>⑤. </b>[강의 수강②] 4강 [학습활동+지문](2) 추론하며 듣기① 학습하기 버튼 클릭 &gt; 문제콕 클릭하고 강의를 확인하세요. </td>
+<td class="center middle">5</td>
+<td class="middle">오른쪽 하단 전구 버튼을 클릭하고 간단 체크 활동문제 1~3부터 8~11까지 클릭해보세요.</td>
+<td class="center middle"><input id="cb21" type="checkbox"/></td>
+<td class="middle"><textarea id="memo21" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle" style="border-bottom: 2px solid black;"><b>⑥. </b>[질답게시판] 나의학습방&gt;(오른쪽)수강중인 강좌&gt;나의 강의실을 클릭&gt;[22개정]2025 내신 국어 1-1 전범위:비상(박현)&gt;(상담)질답게시판 클릭하여 살펴보세요.</td>
+<td class="center middle" style="border-bottom: 2px solid black;">2</td>
+<td class="middle" style="border-bottom: 2px solid black;">강의 질문을 올릴 수 있는 게시판을 확인할 수 있습니다. </td>
+<td class="center middle" style="border-bottom: 2px solid black;"><input id="cb22" type="checkbox"/></td>
+<td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo22" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="center middle" rowspan="10" style="border-bottom: 2px solid black;"><b>시험대비</b></td>
+<td class="middle"><b>①. </b>[시험대비 학습가이드] 페이지 내용을 확인하세요.</td>
+<td class="center middle">2</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb23" type="checkbox"/></td>
+<td class="middle"><textarea id="memo23" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>②. </b>[중간/기말고사] 영어 클릭&gt;중2&gt;출판사'비상교육'&gt;범위 '1학기 전범위'&gt;신이나T 체크박스 클릭&gt; '선택한 강좌 수강하기'를 클릭하여 담아보세요. </td>
+<td class="center middle">2</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb24" type="checkbox"/></td>
+<td class="middle"><textarea id="memo24" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>③. </b>[강의 확인] 나의학습방&gt;(오른쪽)수강중인 강좌&gt;나의 강의실을 클릭&gt;[15개정]2025 시험특강 영어2-1 전범위:비상교육 학습하기 클릭&gt;강의 목록을 확인하세요.</td>
+<td class="center middle">3</td>
+<td class="middle">시험특강은 일종의 써머리 강의로 강의 수가 적습니다.</td>
+<td class="center middle"><input id="cb25" type="checkbox"/></td>
+<td class="middle"><textarea id="memo25" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>④. </b>[평가ZONE-내맘대로 테스트] '시험지명/학년/과목/과정/난이도'를 임의로 선택하여 테스트지를 만들고 문제풀이를 해보세요.</td>
+<td class="center middle">3</td>
+<td class="middle">문항 응답은 임의로 선택하셔도 됩니다. 채점 후 정답/해설 화면을 확인하세요.</td>
+<td class="center middle"><input id="cb26" type="checkbox"/></td>
+<td class="middle"><textarea id="memo26" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>⑤. </b>[평가ZONE-중1 월말평가, 중23 수과 실전평가] 각 메뉴를 확인하세요. </td>
+<td class="center middle">3</td>
+<td class="middle">· [중1 월말평가]는 매월 네번째 월요일에 오픈됩니다. <br/>· [중2,3 수과 실전평가]는 중간고사, 기말고사 기간에 오픈됩니다. </td>
+<td class="center middle"><input id="cb27" type="checkbox"/></td>
+<td class="middle"><textarea id="memo27" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>⑥. </b> [평가ZONE-서술형기출족보] 메뉴를 확인하세요.</td>
+<td class="center middle">2</td>
+<td class="middle"> [서술형기출족보]는 태블릿 화면에 답안을 작성하는 것은 불가하며, 정답/예시 답안 확인만 가능합니다.</td>
+<td class="center middle"><input id="cb28" type="checkbox"/></td>
+<td class="middle"><textarea id="memo28" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>⑦. </b>[평가ZONE-시험콕콕 확인학습] '과학-중3-1단원-콕콕 수강' 영상과 '콕콕 확인학습' 문제풀이를 살펴보세요.</td>
+<td class="center middle">4</td>
+<td class="middle">강의 영상은 강의 방식과 화면 구성 중심으로 살펴보세요. 문항 응답은 임의로 선택하셔도 되며, 채점 후 정답/해설 화면을 확인하세요.</td>
+<td class="center middle"><input id="cb29" type="checkbox"/></td>
+<td class="middle"><textarea id="memo29" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>⑧. </b>[수행평가ZONE-수행평가 대비강좌] 메뉴를 살펴보세요.</td>
+<td class="center middle">2</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb30" type="checkbox"/></td>
+<td class="middle"><textarea id="memo30" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>⑨. </b>[수행평가ZONE-수행평가 가이드, 수행평가 멘토링] 메뉴를 살펴보세요.</td>
+<td class="center middle">2</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb31" type="checkbox"/></td>
+<td class="middle"><textarea id="memo31" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle" style="border-bottom: 2px solid black;"><b>⑩. </b>[수행평가ZONE-수행평가 자료포털] '전체보기'를 눌러 과목별/유형별 자료를 살펴보세요.</td>
+<td class="center middle" style="border-bottom: 2px solid black;">2</td>
+<td class="middle" style="border-bottom: 2px solid black;"><a href="https://www.only1.co.kr/brand/utility/pds/" target="_blank">[수행평가 자료포털] 홈페이지 바로가기 
+</a></td>
+<td class="center middle" style="border-bottom: 2px solid black;"><input id="cb32" type="checkbox"/></td>
+<td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo32" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="center middle" rowspan="7" style="border-bottom: 2px solid black;"><b>국영수 전문</b></td>
+<td class="middle"><b>①. </b>[진단평가] 수학 진단평가 응시 후 결과지를 확인하세요.</td>
+<td class="center middle">3</td>
+<td class="middle">문항 응답은 임의로 선택하셔도 됩니다. 채점 후 정답/해설 화면을 확인하세요.</td>
+<td class="center middle"><input id="cb33" type="checkbox"/></td>
+<td class="middle"><textarea id="memo33" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>②. </b>[국어전문-국어전문 학습가이드] 페이지 내용을 모두 확인하세요.</td>
+<td class="center middle">3</td>
+<td class="middle">메타인지학습(어휘, 문법, 비문학, 문학), 국어전문강좌까지 확인해주세요.</td>
+<td class="center middle"><input id="cb34" type="checkbox"/></td>
+<td class="middle"><textarea id="memo34" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>③. </b>[영어전문-영어전문 학습가이드] 페이지 내용을 모두 확인하세요.</td>
+<td class="center middle">3</td>
+<td class="middle">문법, 독해, 어휘, 회화/쓰기, 듣기/종합까지 확인해주세요.</td>
+<td class="center middle"><input id="cb35" type="checkbox"/></td>
+<td class="middle"><textarea id="memo35" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>④. </b>[수학전문-수학전문 학습가이드] 페이지 내용을 모두 확인하세요.</td>
+<td class="center middle">3</td>
+<td class="middle">입문, 기본, 유형, 심화, 고등, 경시까지 확인해주세요.</td>
+<td class="center middle"><input id="cb36" type="checkbox"/></td>
+<td class="middle"><textarea id="memo36" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>⑤. </b>[국어전문 중등 필독서] (왼쪽) 목차를 하나씩 클릭하여 수록 도서를 살펴보세요.</td>
+<td class="center middle">2</td>
+<td class="middle">교양/기타, 문학/인문, 우리 고전, 세계 명작, 사회/과학까지 확인해주세요.</td>
+<td class="center middle"><input id="cb37" type="checkbox"/></td>
+<td class="middle"><textarea id="memo37" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>⑥. </b>[영어전문 원서도서관] (상단) 학습 가이드를 클릭하여 내용을 확인하세요.</td>
+<td class="center middle">3</td>
+<td class="middle">1단계~5단계까지 확인해주세요.</td>
+<td class="center middle"><input id="cb38" type="checkbox"/></td>
+<td class="middle"><textarea id="memo38" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle" style="border-bottom: 2px solid black;"><b>⑦. </b>[영어전문 원서도서관] All level 클릭&gt; 각 레벨별 수록 도서를 살펴보세요.</td>
+<td class="center middle" style="border-bottom: 2px solid black;">3</td>
+<td class="middle" style="border-bottom: 2px solid black;">무료체험 기간에는 40여권의 도서만 확인 가능합니다.</td>
+<td class="center middle" style="border-bottom: 2px solid black;"><input id="cb39" type="checkbox"/></td>
+<td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo39" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="center middle" rowspan="6" style="border-bottom: 2px solid black;"><b>최상위 클래스</b></td>
+<td class="middle"><b>①. </b>[대치동 수학] '중등예습, 고등예습, 수준별 계통수학, 시험기간' 각 메뉴를 살펴보세요.</td>
+<td class="center middle">3</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb40" type="checkbox"/></td>
+<td class="middle"><textarea id="memo40" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>②. </b>[대치동 과학] '중등예습, 고등예습, 시험기간' 각 메뉴를 살펴보세요.</td>
+<td class="center middle">3</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb41" type="checkbox"/></td>
+<td class="middle"><textarea id="memo41" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>③. </b>[고등대비] '중등복습, 고등예습' 각 메뉴를 살펴보세요.</td>
+<td class="center middle">3</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb42" type="checkbox"/></td>
+<td class="middle"><textarea id="memo42" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>④. </b>[특목고ZONE] '합격 사례 분석, 특목고 대비 강좌' 각 메뉴를 살펴보세요.</td>
+<td class="center middle">3</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb43" type="checkbox"/></td>
+<td class="middle"><textarea id="memo43" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>⑤. </b>[특목고ZONE] '특목고 합격 솔루션, 1:1 전문가 컨설팅' 각 메뉴를 살펴보세요.</td>
+<td class="center middle">3</td>
+<td class="middle">[1:1 전문가 컨설팅] '컨설팅 신청하기'를 눌러 작성 방법을 살펴본 후 닫아 주세요. (등록은 하지 마세요!) </td>
+<td class="center middle"><input id="cb44" type="checkbox"/></td>
+<td class="middle"><textarea id="memo44" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle" style="border-bottom: 2px solid black;"><b>⑥. </b>[특목고ZONE] '자소서 첨삭, 최신 면접 기출' 각 메뉴를 살펴보세요.</td>
+<td class="center middle" style="border-bottom: 2px solid black;">3</td>
+<td class="middle" style="border-bottom: 2px solid black;"></td>
+<td class="center middle" style="border-bottom: 2px solid black;"><input id="cb45" type="checkbox"/></td>
+<td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo45" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="center middle" rowspan="7" style="border-bottom: 2px solid black;"><b>입시진로</b></td>
+<td class="middle"><b>①. </b>[미래교육4.0] 메뉴를 살펴보세요.</td>
+<td class="center middle">2</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb46" type="checkbox"/></td>
+<td class="middle"><textarea id="memo46" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>②. </b>[인증시험 전문강좌] 메뉴를 살펴보세요.</td>
+<td class="center middle">2</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb47" type="checkbox"/></td>
+<td class="middle"><textarea id="memo47" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>③. </b>[진로탐색] '직업인 인터뷰, 독서 활동 가이드' 각 메뉴를 살펴보세요.</td>
+<td class="center middle">2</td>
+<td class="middle"><a href="https://www.only1.co.kr/knowledge/booksGuide/" target="_blank">[독서활동 가이드] 홈페이지 바로가기</a></td>
+<td class="center middle"><input id="cb48" type="checkbox"/></td>
+<td class="middle"><textarea id="memo48" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>④. </b>[특목고 합격 수기] 영상 1개를 시청하세요.</td>
+<td class="center middle">4</td>
+<td class="middle">영상마다 다르지만, 대체로 3~4분 소요됩니다.<br/><a href="https://www.only1.co.kr/Knowledge/interview/index.asp?menuCodeGb=KN" target="_blank">[특목고 합격 수기] 홈페이지 바로가기</a></td>
+<td class="center middle"><input id="cb49" type="checkbox"/></td>
+<td class="middle"><textarea id="memo49" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>⑤. </b>[입시전략 보고서, 특목고 리얼 학교생활] 각 메뉴를 살펴보세요.</td>
+<td class="center middle">2</td>
+<td class="middle"><a href="https://www.only1.co.kr/knowledge/edu_info/issue.asp" target="_blank">[입시전략 보고서] 홈페이지 바로가기</a></td>
+<td class="center middle"><input id="cb50" type="checkbox"/></td>
+<td class="middle"><textarea id="memo50" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>⑥. </b>[공부덕후TV] 영상 1개를 시청하세요.</td>
+<td class="center middle">5</td>
+<td class="middle">영상마다 다르지만, 대체로 3분~5분 소요됩니다.<br/><a href="https://www.only1.co.kr/Knowledge/nerdTV/index.asp" target="_blank">[공부덕후TV] 홈페이지 바로가기</a></td>
+<td class="center middle"><input id="cb51" type="checkbox"/></td>
+<td class="middle"><textarea id="memo51" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle" style="border-bottom: 2px solid black;"><b>⑦. </b>[성적 우수수기, 1등 실전 공부법, 공부의욕 충전소] 각 메뉴를 살펴보세요.</td>
+<td class="center middle" style="border-bottom: 2px solid black;">3</td>
+<td class="middle" style="border-bottom: 2px solid black;"><a href="https://www.only1.co.kr/Knowledge/sbcScholar/index.asp" target="_blank">[성적 우수수기] 홈페이지 바로가기</a></td>
+<td class="center middle" style="border-bottom: 2px solid black;"><input id="cb52" type="checkbox"/></td>
+<td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo52" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="center middle" rowspan="4"><b>기타</b></td>
+<td class="middle"><b>①. </b><a href="https://myurl.ai/zcuxhU" target="_blank">[학습기] 분리형 키보드 세팅 방법을 확인하세요.(클릭)</a></td>
+<td class="center middle">2</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb53" type="checkbox"/></td>
+<td class="middle"><textarea id="memo53" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>②. </b>[교재 구매] 온리원 중등 홈페이지 &gt; (상단) 교재 구매 페이지로 들어가 베스트셀러 내신교재를 살펴보세요.</td>
+<td class="center middle">5</td>
+<td class="middle"><a href="https://mid.only1.co.kr/bookStore/seleced_guide01.asp" target="_blank">[교재 구매 페이지] 바로가기</a></td>
+<td class="center middle"><input id="cb54" type="checkbox"/></td>
+<td class="middle"><textarea id="memo54" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>③. </b>[교재 구매] 온리원 중등 홈페이지 &gt; (상단) 교재 구매 &gt; 맞춤 교재 선택 가이드를 확인하세요.</td>
+<td class="center middle">2</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb55" type="checkbox"/></td>
+<td class="middle"><textarea id="memo55" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle" style=""><b>④. </b><a href="https://myurl.ai/zcuxkl" target="_blank">[교재 구매] 교재쿠폰 사용 방법을 확인하세요.(클릭)</a></td>
+<td class="center middle" style="">2</td>
+<td class="middle" style=""></td>
+<td class="center middle" style=""><input id="cb56" type="checkbox"/></td>
+<td class="middle" style=""><textarea id="memo56" placeholder="메모를 입력하세요..."></textarea></td></tr></tbody>
+</table>
+<button class="save-button" onclick="saveToLocalStorage()">저장</button>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const roomId = params.get("room") || "default";
+
+  function updateProgress(percent = null) {
+    const total = document.querySelectorAll('input[type="checkbox"]').length;
+    const checked = document.querySelectorAll('input[type="checkbox"]:checked').length;
+    percent = total > 0 ? Math.round((checked / total) * 100) : 0;
+    document.getElementById("progress-bar").style.width = percent + "%";
+    document.getElementById("progress-text").innerText = "진행률: " + percent + "%";
+  }
+
+  function localAutoSave() {
+    const data = {};
+    const checkboxes = document.querySelectorAll("input[type='checkbox']");
+    const total = checkboxes.length;
+    let checked = 0;
+
+    checkboxes.forEach((cb, i) => {
+      if (cb.checked) checked++;
+      data["cb" + i] = cb.checked;
+      data["memo" + i] = document.getElementById("memo" + i).value;
+    });
+
+    const percent = total > 0 ? Math.round((checked / total) * 100) : 0;
+    data["progressPercent"] = percent;
+
+    localStorage.setItem("checklist-" + roomId, JSON.stringify(data));
+    updateProgress(percent);
+  }
+
+  function saveToLocalStorage() {
+    localAutoSave();
+    alert("저장이 완료되었습니다.");
+  }
+
+  function loadFromLocalStorage() {
+    const saved = localStorage.getItem("checklist-" + roomId);
+    if (saved) {
+      const data = JSON.parse(saved);
+      const total = document.querySelectorAll("input[type='checkbox']").length;
+      for (let i = 0; i < total; i++) {
+        const cb = document.getElementById("cb" + i);
+        const memo = document.getElementById("memo" + i);
+        if (cb) cb.checked = data["cb" + i] || false;
+        if (memo) memo.value = data["memo" + i] || "";
+      }
+      updateProgress(data["progressPercent"] || 0);
+    }
+  }
+
+  function bindAutoSaveListeners() {
+    const total = document.querySelectorAll("input[type='checkbox']").length;
+    for (let i = 0; i < total; i++) {
+      const cb = document.getElementById("cb" + i);
+      const memo = document.getElementById("memo" + i);
+      if (cb) cb.addEventListener("change", localAutoSave);
+      if (memo) memo.addEventListener("input", localAutoSave);
+    }
+  }
+
+  window.onload = function () {
+    loadFromLocalStorage();
+    bindAutoSaveListeners();
+  };
+</script>
+</body>
+</html>
