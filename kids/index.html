@@ -6,8 +6,6 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>온리원 키즈 콘텐츠 학습 체크리스트</title>
-<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
 <style>
     :root {
         --main-red: #e60000;
@@ -228,6 +226,10 @@
 <body>
 <div class="header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
 <div style="display: flex; align-items: center; gap: 16px;">
+<a href="https://drive.google.com/file/d/1TeFuW_ijO9n_CzZhGPkMo2rb6z517F7G/view?usp=drive_link" style="padding: 6px 12px; background-color: var(--main-red); color: white; text-decoration: none; border-radius: 6px; font-size: 14px;" target="_blank">
+
+      온리원 키즈 구조도
+    </a>
 <div class="header-title" style="font-size: 20px; font-weight: bold;">온리원 키즈 콘텐츠 학습 체크리스트</div>
 <div class="progress-wrapper" style="width: 160px; height: 20px; background-color: #f3f3f3; border-radius: 10px; overflow: hidden; position: relative;">
 <div id="progress-bar" style="background-color: #e60000; height: 100%; width: 0%; transition: width 0.3s ease;"></div>
@@ -258,453 +260,368 @@
 </tr>
 </thead>
 <tbody><tr><td class="center middle" rowspan="1" style="border-bottom: 2px solid black;"><b>필수 시청</b></td>
-    <td class="middle" style="border-bottom: 2px solid black;"><b>①. </b><a href="https://www.youtube.com/watch?si=wn1gPMvcdtK596xr&amp;v=RFjC0PpGsck&amp;feature=youtu.be" target="_blank">[온리원 학습 세팅 안내] 영상을 시청하세요.(클릭)</a> 
+<td class="middle" style="border-bottom: 2px solid black;"><b>①. </b><a href="https://www.youtube.com/watch?si=wn1gPMvcdtK596xr&amp;v=RFjC0PpGsck&amp;feature=youtu.be" target="_blank">[온리원 학습 세팅 안내] 영상을 시청하세요.(클릭)</a>
 </td>
-    <td class="center middle" style="border-bottom: 2px solid black;">5</td>
-    <td class="middle" style="border-bottom: 2px solid black;">해당 영상을 가장 먼저 시청한 후 콘텐츠 학습을 진행해 주세요.</td>
-    <td class="center middle" style="border-bottom: 2px solid black;"><input id="cb0" type="checkbox"/></td>
-    <td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo0" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="center middle" rowspan="7" style="border-bottom: 2px solid black"><b>오늘의 학습</b></td>
-        <td class="middle"><b>①. </b>[맞춤학습] 오늘의 학습 시간표 중 2개 과목 학습을 완료하세요.</td>
-        <td class="center middle">15</td>
-        <td class="middle">콘텐츠마다 다르지만, 대체로 15분 내외 소요됩니다.</td>
-        <td class="center middle"><input id="cb1" type="checkbox"/></td>
-        <td class="middle"><textarea id="memo1" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="middle"><b>②. </b>[화면구성] 오늘의 학습 화면 구성을 확인하고 &lt;TV미러링&gt; 아이콘 위치를 확인하세요.</td>
-        <td class="center middle">1</td>
-        <td class="middle">TV미러링 기능을 상담 시 적절히 활용하시길 추천드립니다.</td>
-        <td class="center middle"><input id="cb2" type="checkbox"/></td>
-        <td class="middle"><textarea id="memo2" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="middle"><b>③. </b>[화면구성] 오늘의 학습 화면 중앙의 ★모양 캘린더를 눌러 인증번호&lt;830731&gt;을 누른 후 부모님 공간에 접속해 보세요.</td>
-        <td class="center middle">2</td>
-        <td class="middle">우측 홈버튼을 누르면 오늘의 학습 화면으로 이동합니다.</td>
-        <td class="center middle"><input id="cb3" type="checkbox"/></td>
-    <td class="middle"><textarea id="memo3" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="middle"><b>④. </b>[영상시청] 오늘의 학습 화면 중앙 ★모양 캘리더 옆 캐릭터 모양 이모티콘을 눌러 &lt;이 달의 화상수업&gt; 영상을 시청하세요.</td>
-        <td class="center middle">7</td>
-        <td class="middle">매월 또는 격월 영상이 변경되지만, 대체로 7분 이내 소요됩니다.</td>
-        <td class="center middle"><input id="cb4" type="checkbox"/></td>
-        <td class="middle"><textarea id="memo4" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="middle"><b>⑤. </b>[화면구성] 오늘의 학습 화면 하단 &lt;러닝맵&gt; 아이콘을 눌러보세요.</td>
-        <td class="center middle">1</td>
-        <td class="middle">러닝맵 메뉴는 학부모 상담 시 자주 활용하는 메뉴입니다. </td>
-        <td class="center middle"><input id="cb5" type="checkbox"/></td>
-        <td class="middle"><textarea id="memo5" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="middle"><b>⑥. </b>[화면구성] 오늘의 학습 화면 하단 중앙 &lt;즐겨찾기&gt; + 버튼을 누른 후 1개 이상의 콘텐츠를 추가/삭제 해 보세요.</td>
-        <td class="center middle">5</td>
-        <td class="middle">온리원키즈 전체 콘텐츠를 즐겨찾기에 추가/삭제할 수 있습니다.</td>
-        <td class="center middle"><input id="cb6" type="checkbox"/></td><td class="middle"><textarea id="memo6" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="middle" style="border-bottom: 2px solid black;"><b>⑦. </b>[화면구성] 오늘의 학습 화면 하단 &lt;전체 학습&gt; 아이콘을 눌러보세요.</td>
-        <td class="center middle" style="border-bottom: 2px solid black;">1</td>
-        <td class="middle" style="border-bottom: 2px solid black;"></td>
-        <td class="center middle" style="border-bottom: 2px solid black;"><input id="cb7" type="checkbox"/></td>
-        <td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo7" placeholder="메모를 입력하세요..."></textarea></td></tr>
-  
-    <tr><td class="center middle" rowspan="5" style="border-bottom: 2px solid black"><b>과목방<br>[한글]</b></td>
-        <td class="middle"><b>①. </b>[실습] &lt;영상&gt; - A코스 [나의 몸] 나의몸, 흔들 흔들 몸 학습(2개)을 완료하세요.</td>
-        <td class="center middle">5</td>
-        <td class="middle"></td>
-        <td class="center middle"><input id="cb8" type="checkbox"/></td>
-        <td class="middle"><textarea id="memo8" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="middle"><b>②. </b>[실습] &lt;동화&gt; A코스 [동물] 요란한 아침, B코스 [ㄱ] 고슴도치의 귀여운 상상 학습(2개)을 완료하세요.</td>
-        <td class="center middle">5</td>
-        <td class="middle"></td>
-        <td class="center middle"><input id="cb9" type="checkbox"/></td>
-        <td class="middle"><textarea id="memo9" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="middle"><b>③. </b>[실습] &lt;놀이&gt; A코스 [나의 몸] 카드 짝 찾기, C코스 [ㄱ과 모음] 글자 받기 학습(2개)을 완료하세요.</td>
-        <td class="center middle">5</td>
-        <td class="middle"></td>
-        <td class="center middle"><input id="cb10" type="checkbox"/></td>
-        <td class="middle"><textarea id="memo10" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="middle"><b>④. </b>[실습] &lt;퀴즈&gt; A코스 [나의 몸] 알맞은 카드 찾기, D코스 [자음] 알맞은 토스트 찾기 학습(2개)을 완료하세요.</td>
-        <td class="center middle">5</td>
-        <td class="middle"></td>
-        <td class="center middle"><input id="cb11" type="checkbox"/></td>
-        <td class="middle"><textarea id="memo11" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="middle" style="border-bottom: 2px solid black;"><b>⑤. </b>[실습] &lt;표현&gt; A코스 [나의 몸] 낱말 카드 만들기, [B코스] [ㅏ] 글자 쓰기 학습(2개)을 완료하세요.</td>
-        <td class="center middle" style="border-bottom: 2px solid black;">5</td>
-        <td class="middle" style="border-bottom: 2px solid black;"></td>
-        <td class="center middle" style="border-bottom: 2px solid black;"><input id="cb12" type="checkbox"/></td>
-        <td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo12" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="center middle" rowspan="4" style="border-bottom: 2px solid black"><b>과목방<br>[수학]</b></td>
-        <td class="middle"><b>①. </b>[실습] &lt;영상&gt; A코스 [1~5 알기] 탁후네 과일가게 학습(1개)을 완료하세요.</td>
-        <td class="center middle">4</td>
-        <td class="middle"></td>
-        <td class="center middle"><input id="cb13" type="checkbox"/></td>
-        <td class="middle"><textarea id="memo13" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="middle"><b>②. </b>[실습] &lt;놀이&gt; A코스 [1~5 알기] 악어 수 세기 학습(1개)을 완료하세요.</td>
-        <td class="center middle">4</td>
-        <td class="middle"></td>
-        <td class="center middle"><input id="cb14" type="checkbox"/></td>
-        <td class="middle"><textarea id="memo14" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="middle"><b>③. </b>[실습] &lt;퀴즈&gt; A코스 [1~5 알기] 알맞은 맛 고르기 학습(1개)을 완료하세요.</td>
-        <td class="center middle">4</td>
-        <td class="middle"></td>
-        <td class="center middle"><input id="cb15" type="checkbox"/></td>
-        <td class="middle"><textarea id="memo15" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="middle" style="border-bottom: 2px solid black;"><b>④. </b>[실습] &lt;표현&gt; A코스 [1~5 알기] 색칠하기 학습(1개)을 완료하세요.</td>
-        <td class="center middle" style="border-bottom: 2px solid black;">4</td>
-        <td class="middle" style="border-bottom: 2px solid black;"></td>
-        <td class="center middle" style="border-bottom: 2px solid black;"><input id="cb16" type="checkbox"/></td>
-        <td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo16" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="center middle" rowspan="6" style="border-bottom: 2px solid black"><b>과목방<br>[영어 스피킹]</b></td>
-        <td class="middle"><b>①. </b>[실습] &lt;영상&gt; A코스 [Hello!] 단어 알아보기, 애니메이션, 단어 챈트, 율동송 학습(4개)을 완료하세요.</td>
-        <td class="center middle">3</td>
-        <td class="middle"></td>
-        <td class="center middle"><input id="cb17" type="checkbox"/></td>
-        <td class="middle"><textarea id="memo17" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="middle"><b>②. </b>[실습] &lt;동화&gt; B코스 [Are You Ready?] ①, ②, ③ 학습(3개)을 완료하세요.</td>
-        <td class="center middle">3</td>
-        <td class="middle"></td>
-        <td class="center middle"><input id="cb18" type="checkbox"/></td>
-        <td class="middle"><textarea id="memo18" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="middle"><b>③. </b>[실습] &lt;놀이&gt; A코스 [Hello!] 단어 그림 맞추기, 단어 확인하기, 단어 익히기, 학습(3개)을 완료하세요.</td>
-        <td class="center middle">3</td>
-        <td class="middle"></td>
-        <td class="center middle"><input id="cb19" type="checkbox"/></td>
-        <td class="middle"><textarea id="memo19" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="middle"><b>④. </b>[실습] &lt;퀴즈&gt; B코스 [Are You Ready?] 퀴즈①, 퀴즈②, 퀴즈③ 학습(3개)을 완료하세요.</td>
-        <td class="center middle">3</td>
-        <td class="middle"></td>
-        <td class="center middle"><input id="cb20" type="checkbox"/></td>
-        <td class="middle"><textarea id="memo20" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="middle"><b>⑤. </b>[실습] &lt;표현&gt; A코스 [Hello!] 손도장 찍기, 콜라주 학습(2개)을 완료하세요.</td>
-        <td class="center middle">3</td>
-        <td class="middle"></td>
-        <td class="center middle"><input id="cb21" type="checkbox"/></td>
-        <td class="middle"><textarea id="memo21" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="middle" style="border-bottom: 2px solid black;"><b>⑥. </b>[실습] &lt;말하기&gt; B코스 [Are You Ready?] 선생님과 말하기 학습(1개)을 완료하세요.</td>
-        <td class="center middle" style="border-bottom: 2px solid black;">3</td>
-        <td class="middle" style="border-bottom: 2px solid black;"></td>
-        <td class="center middle" style="border-bottom: 2px solid black;"><input id="cb22" type="checkbox"/></td>
-        <td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo22" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="center middle" rowspan="4" style="border-bottom: 2px solid black"><b>과목방<br>[영어 파닉스+]</b></td>
-        <td class="middle"><b>①. </b>[실습] &lt;영상&gt; B코스 [b] DJ 두두 챈트, [I, See, A] 사이트워드 챈트 ① 학습(2개)을 완료하세요.</td>
-        <td class="center middle">3</td>
-        <td class="middle"></td>
-        <td class="center middle"><input id="cb23" type="checkbox"/></td>
-        <td class="middle"><textarea id="memo23" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="middle"><b>②. </b>[실습] &lt;놀이&gt; B코스 [b] 음가 알기, [b] 단어 완성하기, [I, See, A] 사이트워드 익히기 ① 학습(3개)을 완료하세요.</td>
-        <td class="center middle">3</td>
-        <td class="middle"></td>
-        <td class="center middle"><input id="cb24" type="checkbox"/></td>
-        <td class="middle"><textarea id="memo24" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="middle"><b>③. </b>[실습] &lt;퀴즈&gt; A코스 [Aa] 단어 퀴즈 ①, ② 학습(2개)을 완료하세요.</td>
-        <td class="center middle">3</td>
-        <td class="middle"></td>
-        <td class="center middle"><input id="cb25" type="checkbox"/></td>
-        <td class="middle"><textarea id="memo25" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="middle" style="border-bottom: 2px solid black;"><b>④. </b>[실습] &lt;말하기&gt; B코스 [b] 리딩 트레이닝 학습(1개)을 완료하세요.</td>
-        <td class="center middle" style="border-bottom: 2px solid black;">3</td>
-        <td class="middle" style="border-bottom: 2px solid black;"></td>
-        <td class="center middle" style="border-bottom: 2px solid black;"><input id="cb26" type="checkbox"/></td>
-        <td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo26" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="center middle" rowspan="3" style="border-bottom: 2px solid black"><b>독서</b></td>
-        <td class="middle"><b>①. </b>[실습] A코스 &lt;와글와글 동물들&gt; 학습을 상상 - 동화 - 놀이 순서에 맞춰 학습을 완료하세요.</td>
-        <td class="center middle">7</td>
-        <td class="middle"></td>
-        <td class="center middle"><input id="cb27" type="checkbox"/></td><td class="middle"><textarea id="memo27" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="middle"><b>②. </b>[실습] B코스 &lt;돌아와! 악어새!&gt; 학습을 상상 - 동화 - 놀이 순서에 맞춰 학습을 완료하세요.</td>
-        <td class="center middle">7</td>
-        <td class="middle"></td>
-        <td class="center middle"><input id="cb28" type="checkbox"/></td>
-        <td class="middle"><textarea id="memo28" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="middle" style="border-bottom: 2px solid black;"><b>③. </b>[실습] C코스 &lt;최고의 남매!&gt; 학습을 상상 - 동화 - 놀이 순서에 맞춰 학습을 완료하세요.</td>
-        <td class="center middle" style="border-bottom: 2px solid black;">7</td>
-        <td class="middle" style="border-bottom: 2px solid black;"></td>
-        <td class="center middle" style="border-bottom: 2px solid black;"><input id="cb29" type="checkbox"/></td>
-        <td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo29" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="center middle" rowspan="3" style="border-bottom: 2px solid black"><b>러닝맵</b></td>
-        <td class="middle"><b>①. </b>[화면구성] 오늘의 학습 화면 하단 &lt;러닝맵&gt; 아이콘을 눌러보세요.</td>
-        <td class="center middle">1</td>
-        <td class="middle"></td>
-        <td class="center middle"><input id="cb30" type="checkbox"/></td>
-        <td class="middle"><textarea id="memo30" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="middle"><b>②. </b>[과목별 실습] 총 5가지 과목의 학습을 1개 이상 완료하세요.</td>
-        <td class="center middle">10</td>
-        <td class="middle">학습 과목: 한글, 수학, 영어스피킹, 영어파닉스+독서 </td>
-        <td class="center middle"><input id="cb31" type="checkbox"/></td>
-        <td class="middle"><textarea id="memo31" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="middle" style="border-bottom: 2px solid black;"><b>③. </b>[코스 구성 확인] 과목별 전체 코스 구성 및 코스 상세 내용을 확인하세요.</td>
-        <td class="center middle" style="border-bottom: 2px solid black;">3</td>
-        <td class="middle" style="border-bottom: 2px solid black;">학습 과목: 한글, 수학, 영어스피킹, 영어파닉스+독서 </td>
-        <td class="center middle" style="border-bottom: 2px solid black;"><input id="cb32" type="checkbox"/></td>
-        <td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo32" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="center middle" rowspan="4" style="border-bottom: 2px solid black"><b>마이룸</b></td>
-        <td class="middle"><b>①. </b>&lt;출석부&gt; 콘텐츠 접속 후 &lt;기념일 스티커&gt;를 오늘 날짜에 적용해 보세요.</td>
-        <td class="center middle">1</td>
-        <td class="middle">원하는 스티커 이모티콘 터치 후 해당하는 날짜에 터치하면 스티커 부착이 완료됩니다.</td>
-        <td class="center middle"><input id="cb33" type="checkbox"/></td>
-        <td class="middle"><textarea id="memo33" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="middle"><b>②. </b>&lt;나의 작품&gt; 콘텐츠 접속 후 과목별 작품을 확인해 보세요.</td>
-        <td class="center middle">3</td>
-        <td class="middle"></td>
-        <td class="center middle"><input id="cb34" type="checkbox"/></td>
-        <td class="middle"><textarea id="memo34" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="middle"><b>③. </b>&lt;쪽지&gt; 오른쪽 도구를 활용하여 담임선생님께 쪽지를 발송해 보세요.</td>
-        <td class="center middle">3</td>
-        <td class="middle"></td>
-        <td class="center middle"><input id="cb35" type="checkbox"/></td>
-        <td class="middle"><textarea id="memo35" placeholder="메모를 입력하세요..."></textarea></td></tr>
-  
-    <tr><td class="middle" style="border-bottom: 2px solid black;"><b>④. </b>&lt;스킨변경&gt; 4가지 스킨 중 마음에 드는 스킨으로 오늘의 학습 스킨을 변경해 보세요.</td>
-        <td class="center middle" style="border-bottom: 2px solid black;">3</td>
-        <td class="middle" style="border-bottom: 2px solid black;"></td>
-        <td class="center middle" style="border-bottom: 2px solid black;"><input id="cb36" type="checkbox"/></td>
-        <td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo36" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="center middle" rowspan="4" style="border-bottom: 2px solid black"><b>부모님 공간</b></td>
-        <td class="middle"><b>①. </b>[화면구성] 오늘의 학습 화면 상단 &lt;톱니바퀴&gt; 아이콘을 누른 후 비밀번호&lt;830731&gt;을 입력하세요.</td>
-        <td class="center middle">2</td>
-        <td class="middle"></td>
-        <td class="center middle"><input id="cb37" type="checkbox"/></td><td class="middle"><textarea id="memo37" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="middle"><b>②. </b>[학습계획표 변경] &lt;코스관리 - 표준 코스 관리&gt; 과목 중 한글 과목의 코스를 변경해 주세요.</td>
-        <td class="center middle">5</td>
-        <td class="middle"></td>
-        <td class="center middle"><input id="cb38" type="checkbox"/></td>
-        <td class="middle"><textarea id="memo38" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="middle"><b>③. </b>[학습계획표 변경] &lt;코스관리 - 맞춤 시간표 삭제&gt; 학습중인 코스 중 x버튼을 눌러 모두 삭제해 주세요.</td>
-        <td class="center middle">4</td>
-        <td class="middle"></td>
-        <td class="center middle"><input id="cb39" type="checkbox"/></td>
-        <td class="middle"><textarea id="memo39" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="middle" style="border-bottom: 2px solid black;"><b>④. </b>[학습계획표 변경] &lt;코스관리 - 맞춤 시간표 추가&gt; 원하는 맞춤 코스 선택 후 적용 완료해 주세요.</td>
-        <td class="center middle" style="border-bottom: 2px solid black;">4</td>
-        <td class="middle" style="border-bottom: 2px solid black;"></td>
-        <td class="center middle" style="border-bottom: 2px solid black;"><input id="cb40" type="checkbox"/></td>
-        <td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo40" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="center middle" rowspan="1" style="border-bottom: 2px solid black;"><b>학습리포트</b></td>
-        <td class="middle" style="border-bottom: 2px solid black;"><b>①. </b>온리원키즈 홈페이지 접속 후 &lt;키즈 프로그램&gt; - &lt;안심케어 솔루션&gt; - &lt;AI 맞춤리포트&gt; 접속 후 제공 메뉴를 확인해 주세요.</td>
-        <td class="center middle" style="border-bottom: 2px solid black;">5</td>
-        <td class="middle" style="border-bottom: 2px solid black;"><a href="https://kids.only1.co.kr/program/solution.asp" target="_blank">[안심케어 솔루션] 안내 페이지 바로가기</a></td>
-        <td class="center middle" style="border-bottom: 2px solid black;"><input id="cb41" type="checkbox"/></td>
-        <td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo41" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="center middle" rowspan="3" style="border-bottom: 2px solid black"><b>자녀정보</b></td>
-        <td class="middle"><b>①. </b>[메뉴 확인] &lt;자녀정보&gt; - &lt;기본정보&gt; 메뉴 접속 후 비밀번호, 학부보 인증번호 변경이 가능한지 확인해 주세요.</td>
-        <td class="center middle">3</td>
-        <td class="middle">비밀번호 변경은 하지 말아주세요.</td>
-        <td class="center middle"><input id="cb42" type="checkbox"/></td>
-        <td class="middle"><textarea id="memo42" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="middle"><b>②. </b>[메뉴 확인] &lt;자녀정보&gt; - &lt;결제정보&gt; 메뉴를 접속해 주세요.</td>
-        <td class="center middle">1</td>
-        <td class="middle">실제 정회원의 경우 &lt;이용 중인 상품명&gt;, &lt;월 결제 내역&gt;을 확인할 수 있습니다.</td>
-        <td class="center middle"><input id="cb43" type="checkbox"/></td>
-        <td class="middle"><textarea id="memo43" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="middle" style="border-bottom: 2px solid black;"><b>③. </b>[메뉴 확인] &lt;진단결과&gt; 메뉴 접속 후 한글, 수학, 영어 파닉스+ 중 1과목을 택하여 진단평가를 응시해 주세요.</td>
-        <td class="center middle" style="border-bottom: 2px solid black;">10</td>
-        <td class="middle" style="border-bottom: 2px solid black;"></td>
-        <td class="center middle" style="border-bottom: 2px solid black;"><input id="cb44" type="checkbox"/></td>
-        <td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo44" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="center middle" rowspan="1" style="border-bottom: 2px solid black;"><b>학습지원</b></td>
-        <td class="middle" style="border-bottom: 2px solid black;"><b>①. </b>[메뉴 확인] &lt;학습지원&gt; - &lt;학습 설정&gt; 메뉴 접속 후 감정 분석 메뉴를 활성화 시켜 주세요.</td>
-        <td class="center middle" style="border-bottom: 2px solid black;">3</td>
-        <td class="middle" style="border-bottom: 2px solid black;"></td>
-        <td class="center middle" style="border-bottom: 2px solid black;"><input id="cb45" type="checkbox"/></td>
-        <td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo45" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="center middle" rowspan="1" style="border-bottom: 2px solid black;"><b>키즈 메타인지<br>[두뇌 트레이닝]</b></td>
-        <td class="middle" style="border-bottom: 2px solid black;"><b>①. </b>[실습] 두뇌 트레이닝 콘텐츠 중 &lt;기억 집중력 - 그림자 조각 맞추기&gt;, &lt;시각 변별력 - 돼지 삼형제 틀린 그림&gt;, &lt;응용력 - 미로 찾기&gt;, &lt;상황 이해력 - 어린이 농장놀이&gt; 중 1개를 선택하여 학습을 완료하세요.</td>
-        <td class="center middle" style="border-bottom: 2px solid black;">5</td>
-        <td class="middle" style="border-bottom: 2px solid black;"></td>
-        <td class="center middle" style="border-bottom: 2px solid black;"><input id="cb46" type="checkbox"/></td>
-        <td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo46" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="center middle" rowspan="1" style="border-bottom: 2px solid black;"><b>키즈 메타인지<br>[명작코딩]</b></td>
-        <td class="middle" style="border-bottom: 2px solid black;"><b>①. </b>[실습] 명작 코딩 진입 후 피터 팬, 흥부 놀부, 아기 돼지 삼형제, 신데렐라 중 1개 선택하여 1차시 학습을 완료하세요.</td>
-        <td class="center middle" style="border-bottom: 2px solid black;">5</td>
-        <td class="middle" style="border-bottom: 2px solid black;"></td>
-        <td class="center middle" style="border-bottom: 2px solid black;"><input id="cb47" type="checkbox"/></td>
-        <td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo47" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="center middle" rowspan="1" style="border-bottom: 2px solid black;"><b>보이스 게임</b></td>
-        <td class="middle" style="border-bottom: 2px solid black;"><b>①. </b>[실습] 스테이지 1 &lt;Are You Ready?&gt; ① 학습을 완료하세요.</td>
-        <td class="center middle" style="border-bottom: 2px solid black;">5</td>
-        <td class="middle" style="border-bottom: 2px solid black;"></td>
-        <td class="center middle" style="border-bottom: 2px solid black;"><input id="cb48" type="checkbox"/></td>
-        <td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo48" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="center middle" rowspan="1" style="border-bottom: 2px solid black;"><b>키즈 마음챙김<br>[심리 진단]</b></td>
-        <td class="middle" style="border-bottom: 2px solid black;"><b>①. </b>[실습] 심리진단 중 &lt;성격유형&gt; 응시 후 결과 분석 화면을 확인해 주세요.</td>
-        <td class="center middle" style="border-bottom: 2px solid black;">7</td>
-        <td class="middle" style="border-bottom: 2px solid black;"></td>
-        <td class="center middle" style="border-bottom: 2px solid black;"><input id="cb49" type="checkbox"/></td>
-        <td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo49" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="center middle" rowspan="2" style="border-bottom: 2px solid black"><b>키즈 마음챙김<br>[감정 분석]</b></td>
-        <td class="middle"><b>①. </b>일일 리포트를 통해 차시별 학습을 완료했을 때 나타나는 종합 감정 값과 진행하면서 시간별로 나타나는 감정 데이터를 확인해 보세요.</td>
-        <td class="center middle">3</td>
-        <td class="middle"></td>
-        <td class="center middle"><input id="cb50" type="checkbox"/></td>
-        <td class="middle"><textarea id="memo50" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="middle" style="border-bottom: 2px solid black;"><b>②. </b>성장 리포트를 통해 학습할 때 많이 노출한 감정과 피드백을 확인해 보세요.</td>
-        <td class="center middle" style="border-bottom: 2px solid black;">3</td>
-        <td class="middle" style="border-bottom: 2px solid black;"></td>
-        <td class="center middle" style="border-bottom: 2px solid black;"><input id="cb51" type="checkbox"/></td>
-        <td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo51" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="center middle" rowspan="2" style="border-bottom: 2px solid black"><b>키즈 마음챙김<br>[마음 훈련]</b></td>
-        <td class="middle"><b>①. </b>호흡, 촛불, 소리, 수면 명상 콘텐츠 중 1개를 선택하여 학습해 보세요.</td>
-        <td class="center middle">3</td>
-        <td class="middle"></td>
-        <td class="center middle"><input id="cb52" type="checkbox"/></td><td class="middle"><textarea id="memo52" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="middle" style="border-bottom: 2px solid black;"><b>②. </b>별자리 그리기, 만다라 그리기 콘텐츠 중 1개를 선택하여 학습해 보세요.</td>
-        <td class="center middle" style="border-bottom: 2px solid black;">3</td>
-        <td class="middle" style="border-bottom: 2px solid black;"></td>
-        <td class="center middle" style="border-bottom: 2px solid black;"><input id="cb53" type="checkbox"/></td>
-        <td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo53" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="center middle" rowspan="2" style="border-bottom: 2px solid black"><b>과목 메타인지<br>[메타인지 한글]</b></td>
-        <td class="middle"><b>①. </b>[쓰기노트] ㄱ으로 시작하는 낱말 ①을 학습해 보세요.</td>
-        <td class="center middle">5</td>
-        <td class="middle"></td>
-        <td class="center middle"><input id="cb54" type="checkbox"/></td>
-        <td class="middle"><textarea id="memo54" placeholder="메모를 입력하세요..."></textarea></td></tr>
-                                                                                           
-    <tr><td class="middle" style="border-bottom: 2px solid black;"><b>②. </b>[AI 마법카드] 자음이 다른 낱말 1을 학습해 보세요.</td>
-        <td class="center middle" style="border-bottom: 2px solid black;">5</td>
-        <td class="middle" style="border-bottom: 2px solid black;"></td>
-        <td class="center middle" style="border-bottom: 2px solid black;"><input id="cb55" type="checkbox"/></td>
-        <td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo55" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="center middle" rowspan="1" style="border-bottom: 2px solid black;"><b>과목 메타인지<br>[메타인지 수학]</b></td>
-        <td class="middle" style="border-bottom: 2px solid black;"><b>①. </b>[연산 어드벤쳐] &lt;연산의 땅&gt; 1~9까지의 수 알기를 학습해 보세요.</td>
-        <td class="center middle" style="border-bottom: 2px solid black;">5</td>
-        <td class="middle" style="border-bottom: 2px solid black;"></td>
-        <td class="center middle" style="border-bottom: 2px solid black;"><input id="cb56" type="checkbox"/></td>
-        <td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo56" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="center middle" rowspan="1" style="border-bottom: 2px solid black;"><b>과목 메타인지<br>[메타인지 영어]</b></td>
-        <td class="middle" style="border-bottom: 2px solid black;"><b>①. </b>[워즈] &lt;주제별 단어&gt; [1] Farm Animals을 학습해 보세요.</td>
-        <td class="center middle" style="border-bottom: 2px solid black;">5</td>
-        <td class="middle" style="border-bottom: 2px solid black;"></td>
-        <td class="center middle" style="border-bottom: 2px solid black;"><input id="cb57" type="checkbox"/></td>
-        <td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo57" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="center middle" rowspan="2" style="border-bottom: 2px solid black"><b>책방</b></td>
-        <td class="middle"><b>①. </b>[전래동화] &lt;개와 고양이&gt; 동화를 학습해 보세요.</td>
-        <td class="center middle">9</td>
-        <td class="middle"></td>
-        <td class="center middle"><input id="cb58" type="checkbox"/></td>
-        <td class="middle"><textarea id="memo58" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="middle" style="border-bottom: 2px solid black;"><b>②. </b>[Reading Step1] Good for you 동화를 학습해 보세요.</td>
-        <td class="center middle" style="border-bottom: 2px solid black;">1</td>
-        <td class="middle" style="border-bottom: 2px solid black;"></td>
-        <td class="center middle" style="border-bottom: 2px solid black;"><input id="cb59" type="checkbox"/></td>
-        <td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo59" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="center middle" rowspan="1" style="border-bottom: 2px solid black;"><b>키즈 프리미엄 학습</b></td>
-        <td class="middle" style="border-bottom: 2px solid black;"><b>①. </b>보보한글, 판다수학, 탁후한자, 럭키과학, 특별학습 구성을 확인해 보세요.</td>
-        <td class="center middle" style="border-bottom: 2px solid black;">5</td>
-        <td class="middle" style="border-bottom: 2px solid black;">온리원초등 누리 학년 콘텐츠와 동일합니다.</td>
-        <td class="center middle" style="border-bottom: 2px solid black;"><input id="cb60" type="checkbox"/></td>
-        <td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo60" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="center middle" rowspan="2" style="border-bottom: 2px solid black"><b>창의놀이</b></td>
-        <td class="middle"><b>①. </b>[신체] &lt;키즈 발레&gt; 중 &lt;발레 놀이&gt;를 직접 체험해 보세요.</td>
-        <td class="center middle">3</td>
-        <td class="middle"></td>
-        <td class="center middle"><input id="cb61" type="checkbox"/></td>
-        <td class="middle"><textarea id="memo61" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="middle" style="border-bottom: 2px solid black;"><b>②. </b>[과학-과학실험], [예술-클레이, 종이접기] 콘텐츠 영상을 1개 이상 시청하세요.</td>
-        <td class="center middle" style="border-bottom: 2px solid black;">5</td>
-        <td class="middle" style="border-bottom: 2px solid black;"></td>
-        <td class="center middle" style="border-bottom: 2px solid black;"><input id="cb62" type="checkbox"/></td>
-        <td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo62" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="center middle" rowspan="2"><b>놀이터</b></td>
-        <td class="middle"><b>①. </b>[한글애니] &lt;캐릭터 - 구름빵&gt;, &lt;주제별 - 한글놀이&gt; 메뉴를 찾아 1개 이상 시청하세요.</td>
-        <td class="center middle">5</td>
-        <td class="middle"></td>
-        <td class="center middle"><input id="cb63" type="checkbox"/></td>
-        <td class="middle"><textarea id="memo63" placeholder="메모를 입력하세요..."></textarea></td></tr>
-    
-    <tr><td class="middle"><b>②. </b>[색칠 놀이] 색칠 활동 완료 후 3D 애니메이션을 직접 확인하세요.</td>
-        <td class="center middle">2</td>
-        <td class="middle">색칠 활동 완료 후 제공되는 3D 애니메이션을 유아 회원들이 무척 좋아합니다!</td>
-        <td class="center middle"><input id="cb64" type="checkbox"/></td>
-        <td class="middle"><textarea id="memo64" placeholder="메모를 입력하세요..."></textarea></td></tr></tbody>
+<td class="center middle" style="border-bottom: 2px solid black;">5</td>
+<td class="middle" style="border-bottom: 2px solid black;">해당 영상을 가장 먼저 시청한 후 콘텐츠 학습을 진행해 주세요.</td>
+<td class="center middle" style="border-bottom: 2px solid black;"><input id="cb0" type="checkbox"/></td>
+<td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo0" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="center middle" rowspan="7" style="border-bottom: 2px solid black"><b>오늘의 학습</b></td>
+<td class="middle"><b>①. </b>[맞춤학습] 오늘의 학습 시간표 중 2개 과목 학습을 완료하세요.</td>
+<td class="center middle">15</td>
+<td class="middle">콘텐츠마다 다르지만, 대체로 15분 내외 소요됩니다.</td>
+<td class="center middle"><input id="cb1" type="checkbox"/></td>
+<td class="middle"><textarea id="memo1" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>②. </b>[화면구성] 오늘의 학습 화면 구성을 확인하고 &lt;TV미러링&gt; 아이콘 위치를 확인하세요.</td>
+<td class="center middle">1</td>
+<td class="middle">TV미러링 기능을 상담 시 적절히 활용하시길 추천드립니다.</td>
+<td class="center middle"><input id="cb2" type="checkbox"/></td>
+<td class="middle"><textarea id="memo2" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>③. </b>[화면구성] 오늘의 학습 화면 중앙의 ★모양 캘린더를 눌러 인증번호&lt;830731&gt;을 누른 후 부모님 공간에 접속해 보세요.</td>
+<td class="center middle">2</td>
+<td class="middle">우측 홈버튼을 누르면 오늘의 학습 화면으로 이동합니다.</td>
+<td class="center middle"><input id="cb3" type="checkbox"/></td>
+<td class="middle"><textarea id="memo3" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>④. </b>[영상시청] 오늘의 학습 화면 중앙 ★모양 캘리더 옆 캐릭터 모양 이모티콘을 눌러 &lt;이 달의 화상수업&gt; 영상을 시청하세요.</td>
+<td class="center middle">7</td>
+<td class="middle">매월 또는 격월 영상이 변경되지만, 대체로 7분 이내 소요됩니다.</td>
+<td class="center middle"><input id="cb4" type="checkbox"/></td>
+<td class="middle"><textarea id="memo4" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>⑤. </b>[화면구성] 오늘의 학습 화면 하단 &lt;러닝맵&gt; 아이콘을 눌러보세요.</td>
+<td class="center middle">1</td>
+<td class="middle">러닝맵 메뉴는 학부모 상담 시 자주 활용하는 메뉴입니다. </td>
+<td class="center middle"><input id="cb5" type="checkbox"/></td>
+<td class="middle"><textarea id="memo5" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>⑥. </b>[화면구성] 오늘의 학습 화면 하단 중앙 &lt;즐겨찾기&gt; + 버튼을 누른 후 1개 이상의 콘텐츠를 추가/삭제 해 보세요.</td>
+<td class="center middle">5</td>
+<td class="middle">온리원키즈 전체 콘텐츠를 즐겨찾기에 추가/삭제할 수 있습니다.</td>
+<td class="center middle"><input id="cb6" type="checkbox"/></td><td class="middle"><textarea id="memo6" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle" style="border-bottom: 2px solid black;"><b>⑦. </b>[화면구성] 오늘의 학습 화면 하단 &lt;전체 학습&gt; 아이콘을 눌러보세요.</td>
+<td class="center middle" style="border-bottom: 2px solid black;">1</td>
+<td class="middle" style="border-bottom: 2px solid black;"></td>
+<td class="center middle" style="border-bottom: 2px solid black;"><input id="cb7" type="checkbox"/></td>
+<td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo7" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="center middle" rowspan="5" style="border-bottom: 2px solid black"><b>과목방<br/>[한글]</b></td>
+<td class="middle"><b>①. </b>[실습] &lt;영상&gt; - A코스 [나의 몸] 나의몸, 흔들 흔들 몸 학습(2개)을 완료하세요.</td>
+<td class="center middle">5</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb8" type="checkbox"/></td>
+<td class="middle"><textarea id="memo8" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>②. </b>[실습] &lt;동화&gt; A코스 [동물] 요란한 아침, B코스 [ㄱ] 고슴도치의 귀여운 상상 학습(2개)을 완료하세요.</td>
+<td class="center middle">5</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb9" type="checkbox"/></td>
+<td class="middle"><textarea id="memo9" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>③. </b>[실습] &lt;놀이&gt; A코스 [나의 몸] 카드 짝 찾기, C코스 [ㄱ과 모음] 글자 받기 학습(2개)을 완료하세요.</td>
+<td class="center middle">5</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb10" type="checkbox"/></td>
+<td class="middle"><textarea id="memo10" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>④. </b>[실습] &lt;퀴즈&gt; A코스 [나의 몸] 알맞은 카드 찾기, D코스 [자음] 알맞은 토스트 찾기 학습(2개)을 완료하세요.</td>
+<td class="center middle">5</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb11" type="checkbox"/></td>
+<td class="middle"><textarea id="memo11" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle" style="border-bottom: 2px solid black;"><b>⑤. </b>[실습] &lt;표현&gt; A코스 [나의 몸] 낱말 카드 만들기, [B코스] [ㅏ] 글자 쓰기 학습(2개)을 완료하세요.</td>
+<td class="center middle" style="border-bottom: 2px solid black;">5</td>
+<td class="middle" style="border-bottom: 2px solid black;"></td>
+<td class="center middle" style="border-bottom: 2px solid black;"><input id="cb12" type="checkbox"/></td>
+<td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo12" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="center middle" rowspan="4" style="border-bottom: 2px solid black"><b>과목방<br/>[수학]</b></td>
+<td class="middle"><b>①. </b>[실습] &lt;영상&gt; A코스 [1~5 알기] 탁후네 과일가게 학습(1개)을 완료하세요.</td>
+<td class="center middle">4</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb13" type="checkbox"/></td>
+<td class="middle"><textarea id="memo13" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>②. </b>[실습] &lt;놀이&gt; A코스 [1~5 알기] 악어 수 세기 학습(1개)을 완료하세요.</td>
+<td class="center middle">4</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb14" type="checkbox"/></td>
+<td class="middle"><textarea id="memo14" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>③. </b>[실습] &lt;퀴즈&gt; A코스 [1~5 알기] 알맞은 맛 고르기 학습(1개)을 완료하세요.</td>
+<td class="center middle">4</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb15" type="checkbox"/></td>
+<td class="middle"><textarea id="memo15" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle" style="border-bottom: 2px solid black;"><b>④. </b>[실습] &lt;표현&gt; A코스 [1~5 알기] 색칠하기 학습(1개)을 완료하세요.</td>
+<td class="center middle" style="border-bottom: 2px solid black;">4</td>
+<td class="middle" style="border-bottom: 2px solid black;"></td>
+<td class="center middle" style="border-bottom: 2px solid black;"><input id="cb16" type="checkbox"/></td>
+<td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo16" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="center middle" rowspan="6" style="border-bottom: 2px solid black"><b>과목방<br/>[영어 스피킹]</b></td>
+<td class="middle"><b>①. </b>[실습] &lt;영상&gt; A코스 [Hello!] 단어 알아보기, 애니메이션, 단어 챈트, 율동송 학습(4개)을 완료하세요.</td>
+<td class="center middle">3</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb17" type="checkbox"/></td>
+<td class="middle"><textarea id="memo17" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>②. </b>[실습] &lt;동화&gt; B코스 [Are You Ready?] ①, ②, ③ 학습(3개)을 완료하세요.</td>
+<td class="center middle">3</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb18" type="checkbox"/></td>
+<td class="middle"><textarea id="memo18" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>③. </b>[실습] &lt;놀이&gt; A코스 [Hello!] 단어 그림 맞추기, 단어 확인하기, 단어 익히기, 학습(3개)을 완료하세요.</td>
+<td class="center middle">3</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb19" type="checkbox"/></td>
+<td class="middle"><textarea id="memo19" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>④. </b>[실습] &lt;퀴즈&gt; B코스 [Are You Ready?] 퀴즈①, 퀴즈②, 퀴즈③ 학습(3개)을 완료하세요.</td>
+<td class="center middle">3</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb20" type="checkbox"/></td>
+<td class="middle"><textarea id="memo20" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>⑤. </b>[실습] &lt;표현&gt; A코스 [Hello!] 손도장 찍기, 콜라주 학습(2개)을 완료하세요.</td>
+<td class="center middle">3</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb21" type="checkbox"/></td>
+<td class="middle"><textarea id="memo21" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle" style="border-bottom: 2px solid black;"><b>⑥. </b>[실습] &lt;말하기&gt; B코스 [Are You Ready?] 선생님과 말하기 학습(1개)을 완료하세요.</td>
+<td class="center middle" style="border-bottom: 2px solid black;">3</td>
+<td class="middle" style="border-bottom: 2px solid black;"></td>
+<td class="center middle" style="border-bottom: 2px solid black;"><input id="cb22" type="checkbox"/></td>
+<td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo22" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="center middle" rowspan="4" style="border-bottom: 2px solid black"><b>과목방<br/>[영어 파닉스+]</b></td>
+<td class="middle"><b>①. </b>[실습] &lt;영상&gt; B코스 [b] DJ 두두 챈트, [I, See, A] 사이트워드 챈트 ① 학습(2개)을 완료하세요.</td>
+<td class="center middle">3</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb23" type="checkbox"/></td>
+<td class="middle"><textarea id="memo23" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>②. </b>[실습] &lt;놀이&gt; B코스 [b] 음가 알기, [b] 단어 완성하기, [I, See, A] 사이트워드 익히기 ① 학습(3개)을 완료하세요.</td>
+<td class="center middle">3</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb24" type="checkbox"/></td>
+<td class="middle"><textarea id="memo24" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>③. </b>[실습] &lt;퀴즈&gt; A코스 [Aa] 단어 퀴즈 ①, ② 학습(2개)을 완료하세요.</td>
+<td class="center middle">3</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb25" type="checkbox"/></td>
+<td class="middle"><textarea id="memo25" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle" style="border-bottom: 2px solid black;"><b>④. </b>[실습] &lt;말하기&gt; B코스 [b] 리딩 트레이닝 학습(1개)을 완료하세요.</td>
+<td class="center middle" style="border-bottom: 2px solid black;">3</td>
+<td class="middle" style="border-bottom: 2px solid black;"></td>
+<td class="center middle" style="border-bottom: 2px solid black;"><input id="cb26" type="checkbox"/></td>
+<td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo26" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="center middle" rowspan="3" style="border-bottom: 2px solid black"><b>독서</b></td>
+<td class="middle"><b>①. </b>[실습] A코스 &lt;와글와글 동물들&gt; 학습을 상상 - 동화 - 놀이 순서에 맞춰 학습을 완료하세요.</td>
+<td class="center middle">7</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb27" type="checkbox"/></td><td class="middle"><textarea id="memo27" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>②. </b>[실습] B코스 &lt;돌아와! 악어새!&gt; 학습을 상상 - 동화 - 놀이 순서에 맞춰 학습을 완료하세요.</td>
+<td class="center middle">7</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb28" type="checkbox"/></td>
+<td class="middle"><textarea id="memo28" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle" style="border-bottom: 2px solid black;"><b>③. </b>[실습] C코스 &lt;최고의 남매!&gt; 학습을 상상 - 동화 - 놀이 순서에 맞춰 학습을 완료하세요.</td>
+<td class="center middle" style="border-bottom: 2px solid black;">7</td>
+<td class="middle" style="border-bottom: 2px solid black;"></td>
+<td class="center middle" style="border-bottom: 2px solid black;"><input id="cb29" type="checkbox"/></td>
+<td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo29" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="center middle" rowspan="3" style="border-bottom: 2px solid black"><b>러닝맵</b></td>
+<td class="middle"><b>①. </b>[화면구성] 오늘의 학습 화면 하단 &lt;러닝맵&gt; 아이콘을 눌러보세요.</td>
+<td class="center middle">1</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb30" type="checkbox"/></td>
+<td class="middle"><textarea id="memo30" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>②. </b>[과목별 실습] 총 5가지 과목의 학습을 1개 이상 완료하세요.</td>
+<td class="center middle">10</td>
+<td class="middle">학습 과목: 한글, 수학, 영어스피킹, 영어파닉스+독서 </td>
+<td class="center middle"><input id="cb31" type="checkbox"/></td>
+<td class="middle"><textarea id="memo31" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle" style="border-bottom: 2px solid black;"><b>③. </b>[코스 구성 확인] 과목별 전체 코스 구성 및 코스 상세 내용을 확인하세요.</td>
+<td class="center middle" style="border-bottom: 2px solid black;">3</td>
+<td class="middle" style="border-bottom: 2px solid black;">학습 과목: 한글, 수학, 영어스피킹, 영어파닉스+독서 </td>
+<td class="center middle" style="border-bottom: 2px solid black;"><input id="cb32" type="checkbox"/></td>
+<td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo32" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="center middle" rowspan="4" style="border-bottom: 2px solid black"><b>마이룸</b></td>
+<td class="middle"><b>①. </b>&lt;출석부&gt; 콘텐츠 접속 후 &lt;기념일 스티커&gt;를 오늘 날짜에 적용해 보세요.</td>
+<td class="center middle">1</td>
+<td class="middle">원하는 스티커 이모티콘 터치 후 해당하는 날짜에 터치하면 스티커 부착이 완료됩니다.</td>
+<td class="center middle"><input id="cb33" type="checkbox"/></td>
+<td class="middle"><textarea id="memo33" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>②. </b>&lt;나의 작품&gt; 콘텐츠 접속 후 과목별 작품을 확인해 보세요.</td>
+<td class="center middle">3</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb34" type="checkbox"/></td>
+<td class="middle"><textarea id="memo34" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>③. </b>&lt;쪽지&gt; 오른쪽 도구를 활용하여 담임선생님께 쪽지를 발송해 보세요.</td>
+<td class="center middle">3</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb35" type="checkbox"/></td>
+<td class="middle"><textarea id="memo35" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle" style="border-bottom: 2px solid black;"><b>④. </b>&lt;스킨변경&gt; 4가지 스킨 중 마음에 드는 스킨으로 오늘의 학습 스킨을 변경해 보세요.</td>
+<td class="center middle" style="border-bottom: 2px solid black;">3</td>
+<td class="middle" style="border-bottom: 2px solid black;"></td>
+<td class="center middle" style="border-bottom: 2px solid black;"><input id="cb36" type="checkbox"/></td>
+<td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo36" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="center middle" rowspan="4" style="border-bottom: 2px solid black"><b>부모님 공간</b></td>
+<td class="middle"><b>①. </b>[화면구성] 오늘의 학습 화면 상단 &lt;톱니바퀴&gt; 아이콘을 누른 후 비밀번호&lt;830731&gt;을 입력하세요.</td>
+<td class="center middle">2</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb37" type="checkbox"/></td><td class="middle"><textarea id="memo37" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>②. </b>[학습계획표 변경] &lt;코스관리 - 표준 코스 관리&gt; 과목 중 한글 과목의 코스를 변경해 주세요.</td>
+<td class="center middle">5</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb38" type="checkbox"/></td>
+<td class="middle"><textarea id="memo38" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>③. </b>[학습계획표 변경] &lt;코스관리 - 맞춤 시간표 삭제&gt; 학습중인 코스 중 x버튼을 눌러 모두 삭제해 주세요.</td>
+<td class="center middle">4</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb39" type="checkbox"/></td>
+<td class="middle"><textarea id="memo39" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle" style="border-bottom: 2px solid black;"><b>④. </b>[학습계획표 변경] &lt;코스관리 - 맞춤 시간표 추가&gt; 원하는 맞춤 코스 선택 후 적용 완료해 주세요.</td>
+<td class="center middle" style="border-bottom: 2px solid black;">4</td>
+<td class="middle" style="border-bottom: 2px solid black;"></td>
+<td class="center middle" style="border-bottom: 2px solid black;"><input id="cb40" type="checkbox"/></td>
+<td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo40" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="center middle" rowspan="1" style="border-bottom: 2px solid black;"><b>학습리포트</b></td>
+<td class="middle" style="border-bottom: 2px solid black;"><b>①. </b>온리원키즈 홈페이지 접속 후 &lt;키즈 프로그램&gt; - &lt;안심케어 솔루션&gt; - &lt;AI 맞춤리포트&gt; 접속 후 제공 메뉴를 확인해 주세요.</td>
+<td class="center middle" style="border-bottom: 2px solid black;">5</td>
+<td class="middle" style="border-bottom: 2px solid black;"><a href="https://kids.only1.co.kr/program/solution.asp" target="_blank">[안심케어 솔루션] 안내 페이지 바로가기</a></td>
+<td class="center middle" style="border-bottom: 2px solid black;"><input id="cb41" type="checkbox"/></td>
+<td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo41" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="center middle" rowspan="3" style="border-bottom: 2px solid black"><b>자녀정보</b></td>
+<td class="middle"><b>①. </b>[메뉴 확인] &lt;자녀정보&gt; - &lt;기본정보&gt; 메뉴 접속 후 비밀번호, 학부보 인증번호 변경이 가능한지 확인해 주세요.</td>
+<td class="center middle">3</td>
+<td class="middle">비밀번호 변경은 하지 말아주세요.</td>
+<td class="center middle"><input id="cb42" type="checkbox"/></td>
+<td class="middle"><textarea id="memo42" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>②. </b>[메뉴 확인] &lt;자녀정보&gt; - &lt;결제정보&gt; 메뉴를 접속해 주세요.</td>
+<td class="center middle">1</td>
+<td class="middle">실제 정회원의 경우 &lt;이용 중인 상품명&gt;, &lt;월 결제 내역&gt;을 확인할 수 있습니다.</td>
+<td class="center middle"><input id="cb43" type="checkbox"/></td>
+<td class="middle"><textarea id="memo43" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle" style="border-bottom: 2px solid black;"><b>③. </b>[메뉴 확인] &lt;진단결과&gt; 메뉴 접속 후 한글, 수학, 영어 파닉스+ 중 1과목을 택하여 진단평가를 응시해 주세요.</td>
+<td class="center middle" style="border-bottom: 2px solid black;">10</td>
+<td class="middle" style="border-bottom: 2px solid black;"></td>
+<td class="center middle" style="border-bottom: 2px solid black;"><input id="cb44" type="checkbox"/></td>
+<td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo44" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="center middle" rowspan="1" style="border-bottom: 2px solid black;"><b>학습지원</b></td>
+<td class="middle" style="border-bottom: 2px solid black;"><b>①. </b>[메뉴 확인] &lt;학습지원&gt; - &lt;학습 설정&gt; 메뉴 접속 후 감정 분석 메뉴를 활성화 시켜 주세요.</td>
+<td class="center middle" style="border-bottom: 2px solid black;">3</td>
+<td class="middle" style="border-bottom: 2px solid black;"></td>
+<td class="center middle" style="border-bottom: 2px solid black;"><input id="cb45" type="checkbox"/></td>
+<td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo45" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="center middle" rowspan="1" style="border-bottom: 2px solid black;"><b>키즈 메타인지<br/>[두뇌 트레이닝]</b></td>
+<td class="middle" style="border-bottom: 2px solid black;"><b>①. </b>[실습] 두뇌 트레이닝 콘텐츠 중 &lt;기억 집중력 - 그림자 조각 맞추기&gt;, &lt;시각 변별력 - 돼지 삼형제 틀린 그림&gt;, &lt;응용력 - 미로 찾기&gt;, &lt;상황 이해력 - 어린이 농장놀이&gt; 중 1개를 선택하여 학습을 완료하세요.</td>
+<td class="center middle" style="border-bottom: 2px solid black;">5</td>
+<td class="middle" style="border-bottom: 2px solid black;"></td>
+<td class="center middle" style="border-bottom: 2px solid black;"><input id="cb46" type="checkbox"/></td>
+<td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo46" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="center middle" rowspan="1" style="border-bottom: 2px solid black;"><b>키즈 메타인지<br/>[명작코딩]</b></td>
+<td class="middle" style="border-bottom: 2px solid black;"><b>①. </b>[실습] 명작 코딩 진입 후 피터 팬, 흥부 놀부, 아기 돼지 삼형제, 신데렐라 중 1개 선택하여 1차시 학습을 완료하세요.</td>
+<td class="center middle" style="border-bottom: 2px solid black;">5</td>
+<td class="middle" style="border-bottom: 2px solid black;"></td>
+<td class="center middle" style="border-bottom: 2px solid black;"><input id="cb47" type="checkbox"/></td>
+<td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo47" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="center middle" rowspan="1" style="border-bottom: 2px solid black;"><b>보이스 게임</b></td>
+<td class="middle" style="border-bottom: 2px solid black;"><b>①. </b>[실습] 스테이지 1 &lt;Are You Ready?&gt; ① 학습을 완료하세요.</td>
+<td class="center middle" style="border-bottom: 2px solid black;">5</td>
+<td class="middle" style="border-bottom: 2px solid black;"></td>
+<td class="center middle" style="border-bottom: 2px solid black;"><input id="cb48" type="checkbox"/></td>
+<td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo48" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="center middle" rowspan="1" style="border-bottom: 2px solid black;"><b>키즈 마음챙김<br/>[심리 진단]</b></td>
+<td class="middle" style="border-bottom: 2px solid black;"><b>①. </b>[실습] 심리진단 중 &lt;성격유형&gt; 응시 후 결과 분석 화면을 확인해 주세요.</td>
+<td class="center middle" style="border-bottom: 2px solid black;">7</td>
+<td class="middle" style="border-bottom: 2px solid black;"></td>
+<td class="center middle" style="border-bottom: 2px solid black;"><input id="cb49" type="checkbox"/></td>
+<td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo49" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="center middle" rowspan="2" style="border-bottom: 2px solid black"><b>키즈 마음챙김<br/>[감정 분석]</b></td>
+<td class="middle"><b>①. </b>일일 리포트를 통해 차시별 학습을 완료했을 때 나타나는 종합 감정 값과 진행하면서 시간별로 나타나는 감정 데이터를 확인해 보세요.</td>
+<td class="center middle">3</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb50" type="checkbox"/></td>
+<td class="middle"><textarea id="memo50" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle" style="border-bottom: 2px solid black;"><b>②. </b>성장 리포트를 통해 학습할 때 많이 노출한 감정과 피드백을 확인해 보세요.</td>
+<td class="center middle" style="border-bottom: 2px solid black;">3</td>
+<td class="middle" style="border-bottom: 2px solid black;"></td>
+<td class="center middle" style="border-bottom: 2px solid black;"><input id="cb51" type="checkbox"/></td>
+<td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo51" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="center middle" rowspan="2" style="border-bottom: 2px solid black"><b>키즈 마음챙김<br/>[마음 훈련]</b></td>
+<td class="middle"><b>①. </b>호흡, 촛불, 소리, 수면 명상 콘텐츠 중 1개를 선택하여 학습해 보세요.</td>
+<td class="center middle">3</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb52" type="checkbox"/></td><td class="middle"><textarea id="memo52" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle" style="border-bottom: 2px solid black;"><b>②. </b>별자리 그리기, 만다라 그리기 콘텐츠 중 1개를 선택하여 학습해 보세요.</td>
+<td class="center middle" style="border-bottom: 2px solid black;">3</td>
+<td class="middle" style="border-bottom: 2px solid black;"></td>
+<td class="center middle" style="border-bottom: 2px solid black;"><input id="cb53" type="checkbox"/></td>
+<td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo53" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="center middle" rowspan="2" style="border-bottom: 2px solid black"><b>과목 메타인지<br/>[메타인지 한글]</b></td>
+<td class="middle"><b>①. </b>[쓰기노트] ㄱ으로 시작하는 낱말 ①을 학습해 보세요.</td>
+<td class="center middle">5</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb54" type="checkbox"/></td>
+<td class="middle"><textarea id="memo54" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle" style="border-bottom: 2px solid black;"><b>②. </b>[AI 마법카드] 자음이 다른 낱말 1을 학습해 보세요.</td>
+<td class="center middle" style="border-bottom: 2px solid black;">5</td>
+<td class="middle" style="border-bottom: 2px solid black;"></td>
+<td class="center middle" style="border-bottom: 2px solid black;"><input id="cb55" type="checkbox"/></td>
+<td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo55" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="center middle" rowspan="1" style="border-bottom: 2px solid black;"><b>과목 메타인지<br/>[메타인지 수학]</b></td>
+<td class="middle" style="border-bottom: 2px solid black;"><b>①. </b>[연산 어드벤쳐] &lt;연산의 땅&gt; 1~9까지의 수 알기를 학습해 보세요.</td>
+<td class="center middle" style="border-bottom: 2px solid black;">5</td>
+<td class="middle" style="border-bottom: 2px solid black;"></td>
+<td class="center middle" style="border-bottom: 2px solid black;"><input id="cb56" type="checkbox"/></td>
+<td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo56" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="center middle" rowspan="1" style="border-bottom: 2px solid black;"><b>과목 메타인지<br/>[메타인지 영어]</b></td>
+<td class="middle" style="border-bottom: 2px solid black;"><b>①. </b>[워즈] &lt;주제별 단어&gt; [1] Farm Animals을 학습해 보세요.</td>
+<td class="center middle" style="border-bottom: 2px solid black;">5</td>
+<td class="middle" style="border-bottom: 2px solid black;"></td>
+<td class="center middle" style="border-bottom: 2px solid black;"><input id="cb57" type="checkbox"/></td>
+<td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo57" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="center middle" rowspan="2" style="border-bottom: 2px solid black"><b>책방</b></td>
+<td class="middle"><b>①. </b>[전래동화] &lt;개와 고양이&gt; 동화를 학습해 보세요.</td>
+<td class="center middle">9</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb58" type="checkbox"/></td>
+<td class="middle"><textarea id="memo58" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle" style="border-bottom: 2px solid black;"><b>②. </b>[Reading Step1] Good for you 동화를 학습해 보세요.</td>
+<td class="center middle" style="border-bottom: 2px solid black;">1</td>
+<td class="middle" style="border-bottom: 2px solid black;"></td>
+<td class="center middle" style="border-bottom: 2px solid black;"><input id="cb59" type="checkbox"/></td>
+<td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo59" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="center middle" rowspan="1" style="border-bottom: 2px solid black;"><b>키즈 프리미엄 학습</b></td>
+<td class="middle" style="border-bottom: 2px solid black;"><b>①. </b>보보한글, 판다수학, 탁후한자, 럭키과학, 특별학습 구성을 확인해 보세요.</td>
+<td class="center middle" style="border-bottom: 2px solid black;">5</td>
+<td class="middle" style="border-bottom: 2px solid black;">온리원초등 누리 학년 콘텐츠와 동일합니다.</td>
+<td class="center middle" style="border-bottom: 2px solid black;"><input id="cb60" type="checkbox"/></td>
+<td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo60" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="center middle" rowspan="2" style="border-bottom: 2px solid black"><b>창의놀이</b></td>
+<td class="middle"><b>①. </b>[신체] &lt;키즈 발레&gt; 중 &lt;발레 놀이&gt;를 직접 체험해 보세요.</td>
+<td class="center middle">3</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb61" type="checkbox"/></td>
+<td class="middle"><textarea id="memo61" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle" style="border-bottom: 2px solid black;"><b>②. </b>[과학-과학실험], [예술-클레이, 종이접기] 콘텐츠 영상을 1개 이상 시청하세요.</td>
+<td class="center middle" style="border-bottom: 2px solid black;">5</td>
+<td class="middle" style="border-bottom: 2px solid black;"></td>
+<td class="center middle" style="border-bottom: 2px solid black;"><input id="cb62" type="checkbox"/></td>
+<td class="middle" style="border-bottom: 2px solid black;"><textarea id="memo62" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="center middle" rowspan="2"><b>놀이터</b></td>
+<td class="middle"><b>①. </b>[한글애니] &lt;캐릭터 - 구름빵&gt;, &lt;주제별 - 한글놀이&gt; 메뉴를 찾아 1개 이상 시청하세요.</td>
+<td class="center middle">5</td>
+<td class="middle"></td>
+<td class="center middle"><input id="cb63" type="checkbox"/></td>
+<td class="middle"><textarea id="memo63" placeholder="메모를 입력하세요..."></textarea></td></tr>
+<tr><td class="middle"><b>②. </b>[색칠 놀이] 색칠 활동 완료 후 3D 애니메이션을 직접 확인하세요.</td>
+<td class="center middle">2</td>
+<td class="middle">색칠 활동 완료 후 제공되는 3D 애니메이션을 유아 회원들이 무척 좋아합니다!</td>
+<td class="center middle"><input id="cb64" type="checkbox"/></td>
+<td class="middle"><textarea id="memo64" placeholder="메모를 입력하세요..."></textarea></td></tr></tbody>
 </table>
-<button class="save-button" onclick="saveToFirebase()">저장</button>
-
-   <script>
-  // Firebase 설정
-  const firebaseConfig = {
-    apiKey: "AIzaSyBHGPiEKQqpTBBiePdSw63uOxxl38_tHds",
-    authDomain: "only1vs.firebaseapp.com",
-    projectId: "only1vs",
-    storageBucket: "only1vs.firebasestorage.app",
-    messagingSenderId: "420271780307",
-    appId: "1:420271780307:web:e2ac42ae77e8f277c5ff26",
-    measurementId: "G-B3N7C0XSMS"
-  };
-
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.firestore();
-
+<button class="save-button" onclick="saveToLocalStorage()">저장</button>
+<script>
   const params = new URLSearchParams(window.location.search);
   const roomId = params.get("room") || "default";
-  const type = params.get("type") || "checklist";
-  const docRef = db.collection("checklist-" + type).doc(roomId);
 
-  // 진행률 업데이트 함수
   function updateProgress(percent = null) {
-    if (percent === null) {
-      const total = document.querySelectorAll('input[type="checkbox"]').length;
-      const checked = document.querySelectorAll('input[type="checkbox"]:checked').length;
-      percent = total > 0 ? Math.round((checked / total) * 100) : 0;
-    }
+    const total = document.querySelectorAll('input[type="checkbox"]').length;
+    const checked = document.querySelectorAll('input[type="checkbox"]:checked').length;
+    percent = total > 0 ? Math.round((checked / total) * 100) : 0;
     document.getElementById("progress-bar").style.width = percent + "%";
     document.getElementById("progress-text").innerText = "진행률: " + percent + "%";
   }
 
-  // 자동저장 및 진행률 저장
-  function autoSaveToFirebase() {
+  function localAutoSave() {
     const data = {};
     const checkboxes = document.querySelectorAll("input[type='checkbox']");
     const total = checkboxes.length;
@@ -719,66 +636,44 @@
     const percent = total > 0 ? Math.round((checked / total) * 100) : 0;
     data["progressPercent"] = percent;
 
-    docRef.set(data);
+    localStorage.setItem("checklist-" + roomId, JSON.stringify(data));
     updateProgress(percent);
   }
 
-  // 수동 저장
-  async function saveToFirebase() {
-    const data = {};
-    const checkboxes = document.querySelectorAll("input[type='checkbox']");
-    const total = checkboxes.length;
-    let checked = 0;
-
-    checkboxes.forEach((cb, i) => {
-      if (cb.checked) checked++;
-      data["cb" + i] = cb.checked;
-      data["memo" + i] = document.getElementById("memo" + i).value;
-    });
-
-    const percent = total > 0 ? Math.round((checked / total) * 100) : 0;
-    data["progressPercent"] = percent;
-
-    await docRef.set(data);
-    updateProgress(percent);
+  function saveToLocalStorage() {
+    localAutoSave();
     alert("저장이 완료되었습니다.");
   }
 
-  // Firebase 불러오기
-  async function loadFromFirebase() {
-    const doc = await docRef.get();
-    if (doc.exists) {
-      const data = doc.data();
+  function loadFromLocalStorage() {
+    const saved = localStorage.getItem("checklist-" + roomId);
+    if (saved) {
+      const data = JSON.parse(saved);
       const total = document.querySelectorAll("input[type='checkbox']").length;
-
       for (let i = 0; i < total; i++) {
-        document.getElementById("cb" + i).checked = data["cb" + i] || false;
-        document.getElementById("memo" + i).value = data["memo" + i] || "";
+        const cb = document.getElementById("cb" + i);
+        const memo = document.getElementById("memo" + i);
+        if (cb) cb.checked = data["cb" + i] || false;
+        if (memo) memo.value = data["memo" + i] || "";
       }
-
-      const percent = data["progressPercent"] || 0;
-      updateProgress(percent);
+      updateProgress(data["progressPercent"] || 0);
     }
   }
 
-  // 체크박스/메모 이벤트 등록
   function bindAutoSaveListeners() {
     const total = document.querySelectorAll("input[type='checkbox']").length;
     for (let i = 0; i < total; i++) {
       const cb = document.getElementById("cb" + i);
       const memo = document.getElementById("memo" + i);
-      if (cb) cb.addEventListener("change", autoSaveToFirebase);
-      if (memo) memo.addEventListener("input", autoSaveToFirebase);
+      if (cb) cb.addEventListener("change", localAutoSave);
+      if (memo) memo.addEventListener("input", localAutoSave);
     }
   }
 
-  // 페이지 로딩 시 실행
-  window.onload = async function () {
-    await loadFromFirebase();
+  window.onload = function () {
+    loadFromLocalStorage();
     bindAutoSaveListeners();
   };
 </script>
-
-
 </body>
 </html>
