@@ -820,7 +820,7 @@
     </tbody>
   </table>
 
-  <button class="save-button" onclick="saveToLocalStorage()">저장</button>
+  <button class="save-button" onclick="saveToSheet()">저장</button>
 
  
 <script>
@@ -892,6 +892,74 @@
 
 
 
+
+
+<script>
+const sheetURL = "https://script.google.com/macros/s/AKfycbz57byVH3iVxi-p02--FCKTx7lZ8oDFWpRFkI80U1_8I2yVGz2oO7vel3suDK8uIhPbbA/exec";
+const roomId = new URLSearchParams(window.location.search).get("room") || "default";
+
+function updateProgress(percent = null) {
+  const total = document.querySelectorAll('input[type="checkbox"]').length;
+  const checked = document.querySelectorAll('input[type="checkbox"]:checked').length;
+  percent = total > 0 ? Math.round((checked / total) * 100) : 0;
+  document.getElementById("progress-bar").style.width = percent + "%";
+  document.getElementById("progress-text").innerText = "진행률: " + percent + "%";
+}
+
+function saveToSheet() {
+  const data = {};
+  const checkboxes = document.querySelectorAll("input[type='checkbox']");
+  const textareas = document.querySelectorAll("textarea");
+
+  checkboxes.forEach(cb => data[cb.id] = cb.checked);
+  textareas.forEach(ta => data[ta.id] = ta.value);
+
+  const total = checkboxes.length;
+  const checked = Array.from(checkboxes).filter(cb => cb.checked).length;
+  const percent = total > 0 ? Math.round((checked / total) * 100) : 0;
+  data["progressPercent"] = percent;
+
+  fetch(sheetURL, {
+    method: "POST",
+    body: JSON.stringify({ room: roomId, values: data }),
+    headers: { "Content-Type": "application/json" }
+  }).then(() => {
+    alert("저장이 완료되었습니다!");
+    updateProgress(percent);
+  });
+}
+
+async function loadFromSheet() {
+  try {
+    const res = await fetch(`${sheetURL}?room=${roomId}`);
+    const data = await res.json();
+
+    Object.entries(data).forEach(([id, value]) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      if (el.type === "checkbox") el.checked = (value === "true" || value === true);
+      else el.value = value;
+    });
+
+    updateProgress(parseInt(data["progressPercent"] || 0));
+  } catch (e) {
+    console.error("❌ 데이터 불러오기 실패:", e);
+  }
+}
+
+function bindAutoSaveListeners() {
+  const checkboxes = document.querySelectorAll("input[type='checkbox']");
+  const textareas = document.querySelectorAll("textarea");
+
+  checkboxes.forEach(cb => cb.addEventListener("change", saveToSheet));
+  textareas.forEach(ta => ta.addEventListener("input", saveToSheet));
+}
+
+window.onload = function () {
+  loadFromSheet();
+  bindAutoSaveListeners();
+};
+</script>
 
 </body>
 </html>
