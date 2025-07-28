@@ -71,24 +71,47 @@
 <label for="room">사용자 ID (년+월+알파벳):</label>
 <input id="room" placeholder="예: 2505a, 2505b..." type="text"/>
 <button onclick="generateLink()">링크 생성하기</button>
+<button onclick="document.getElementById('room').value = generateRandomRoomId();">자동 생성</button>
+<button onclick="copyLink()">링크 복사하기</button>
+
 <div id="result"></div>
+
 <script>
-    function generateLink() {
-      const room = document.getElementById("room").value.trim();
-      const type = document.getElementById("type").value;
-      if (!room) {
-        alert("사용자 ID를 입력해주세요!");
-        return;
-      }
-      const baseUrl = "https://only1-checklist2.netlify.app/"; 
-      const fullPath = `${baseUrl}${type === 'checklist' ? '' : `/${type}`}?room=${encodeURIComponent(room)}&type=${type}`;
-
-
+function generateLink() {
+  const room = document.getElementById("room").value.trim();
+  const type = document.getElementById("type").value;
+  if (!room) {
+    alert("사용자 ID를 입력해주세요!");
+    return;
+  }
+  const baseUrl = "https://only1-checklist2.netlify.app/";
+  const fullPath = \`\${baseUrl}\${type === 'checklist' ? '' : `/\${type}`}?room=\${encodeURIComponent(room)}&type=\${type}\`;
 
   document.getElementById("result").innerHTML = 
-    `<strong>생성된 링크:</strong><br><a href="${fullPath}" target="_blank">${fullPath}</a>`;
+    `<strong>생성된 링크:</strong><br><a href="\${fullPath}" target="_blank">\${fullPath}</a>`;
 }
-    
-  </script>
+
+function copyLink() {
+  const link = document.querySelector("#result a");
+  if (!link) {
+    alert("먼저 링크를 생성하세요.");
+    return;
+  }
+
+  navigator.clipboard.writeText(link.href).then(() => {
+    alert("링크가 복사되었습니다!");
+  }).catch(err => {
+    alert("복사 실패: " + err);
+  });
+}
+
+function generateRandomRoomId() {
+  const now = new Date();
+  const datePart = \`\${now.getFullYear().toString().slice(2)}\${(now.getMonth()+1).toString().padStart(2, '0')}\`;
+  const rand = Math.random().toString(36).substring(2, 4);
+  return \`\${datePart}\${rand}\`;
+}
+</script>
+
 </body>
 </html>
